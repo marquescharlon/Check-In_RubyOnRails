@@ -1,0 +1,2 @@
+json.extract! estabelecimento, :id, :CNPJ, :InscEstadual, :RazaoSocial, :NomeFantasia, :CEP, :cIdade, :UF, :CodigoMunicipalIbge, :Logradouro, :Bairro, :Numero, :Complemento, :TelefoneFixo, :Celular, :Email, :Observacao, :created_at, :updated_at
+json.url estabelecimento_url(estabelecimento, format: :json)

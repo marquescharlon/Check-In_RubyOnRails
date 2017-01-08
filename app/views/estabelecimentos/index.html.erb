@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Estabelecimentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cnpj</th>
+      <th>Inscestadual</th>
+      <th>Razaosocial</th>
+      <th>Nomefantasia</th>
+      <th>Cep</th>
+      <th>Cidade</th>
+      <th>Uf</th>
+      <th>Codigomunicipalibge</th>
+      <th>Logradouro</th>
+      <th>Bairro</th>
+      <th>Numero</th>
+      <th>Complemento</th>
+      <th>Telefonefixo</th>
+      <th>Celular</th>
+      <th>Email</th>
+      <th>Observacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estabelecimentos.each do |estabelecimento| %>
+      <tr>
+        <td><%= estabelecimento.CNPJ %></td>
+        <td><%= estabelecimento.InscEstadual %></td>
+        <td><%= estabelecimento.RazaoSocial %></td>
+        <td><%= estabelecimento.NomeFantasia %></td>
+        <td><%= estabelecimento.CEP %></td>
+        <td><%= estabelecimento.cIdade %></td>
+        <td><%= estabelecimento.UF %></td>
+        <td><%= estabelecimento.CodigoMunicipalIbge %></td>
+        <td><%= estabelecimento.Logradouro %></td>
+        <td><%= estabelecimento.Bairro %></td>
+        <td><%= estabelecimento.Numero %></td>
+        <td><%= estabelecimento.Complemento %></td>
+        <td><%= estabelecimento.TelefoneFixo %></td>
+        <td><%= estabelecimento.Celular %></td>
+        <td><%= estabelecimento.Email %></td>
+        <td><%= estabelecimento.Observacao %></td>
+        <td><%= link_to 'Show', estabelecimento %></td>
+        <td><%= link_to 'Edit', edit_estabelecimento_path(estabelecimento) %></td>
+        <td><%= link_to 'Destroy', estabelecimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estabelecimento', new_estabelecimento_path %>

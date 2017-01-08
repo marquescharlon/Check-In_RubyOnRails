@@ -1,0 +1,50 @@
+<%- model_class = Mesa -%>
+
+<div class="container-fluid">
+  <div class="row col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+
+      <!-- INICIO DA TABELA -->
+      <table class="table table-striped">
+        <div class="panel-heading">
+          <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+        </div>
+
+        <!-- CABECALHO DA TABELA -->
+        <thead>
+          <tr>
+            <th><%= model_class.human_attribute_name(:cadeiras) %></th>
+            <th>Observação</th>
+            <th>Liberada</th>
+            <th>Detalhes</th>
+          </tr>
+        </thead>
+
+        <!-- CORPO DA TABELA -->
+        <tbody>
+          <% @mesas.each do |mesa| %>
+          <tr>
+            <% codigo = User.first_or_create %>
+            <% if codigo.mesa_codigo.blank? %>
+            <td><h4><i class="fa fa-caret-right" aria-hidden="true">  <%= link_to (mesa.cadeiras), edit_mesa_path(mesa) %></i></h4></td>
+            <% else %>
+            <td><h4><i class="fa fa-caret-right" aria-hidden="true">  <%= mesa.cadeiras %></i></h4></td>
+            <% end %>
+            <td>
+              <%= truncate(mesa.observacao, :length => 200) %></td>
+              <td><%= friendly_date(mesa.updated_at)  %></td>
+              <% if codigo.mesa_codigo.blank? %>
+              <td><%= link_to t("Detalhes"), edit_mesa_path(mesa), :class => "btn btn-primary" %></td>
+              <% else %>
+              <td><%= link_to t("Detalhes"), edit_mesa_path(mesa), :class => "btn btn-primary", :disabled => true %></td>
+              <% end %>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <br><br>
+      <!-- PAGINACAO -->
+      <%= will_paginate @mesas, renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>

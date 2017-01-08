@@ -1,0 +1,81 @@
+<%= form_for(@estabelecimento) do |f| %>
+  <% if @estabelecimento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@estabelecimento.errors.count, "error") %> prohibited this estabelecimento from being saved:</h2>
+
+      <ul>
+      <% @estabelecimento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :CNPJ %><br>
+    <%= f.text_field :CNPJ %>
+  </div>
+  <div class="field">
+    <%= f.label :InscEstadual %><br>
+    <%= f.number_field :InscEstadual %>
+  </div>
+  <div class="field">
+    <%= f.label :RazaoSocial %><br>
+    <%= f.text_field :RazaoSocial %>
+  </div>
+  <div class="field">
+    <%= f.label :NomeFantasia %><br>
+    <%= f.text_field :NomeFantasia %>
+  </div>
+  <div class="field">
+    <%= f.label :CEP %><br>
+    <%= f.text_field :CEP %>
+  </div>
+  <div class="field">
+    <%= f.label :cIdade %><br>
+    <%= f.text_field :cIdade %>
+  </div>
+  <div class="field">
+    <%= f.label :UF %><br>
+    <%= f.text_field :UF %>
+  </div>
+  <div class="field">
+    <%= f.label :CodigoMunicipalIbge %><br>
+    <%= f.text_field :CodigoMunicipalIbge %>
+  </div>
+  <div class="field">
+    <%= f.label :Logradouro %><br>
+    <%= f.text_field :Logradouro %>
+  </div>
+  <div class="field">
+    <%= f.label :Bairro %><br>
+    <%= f.text_field :Bairro %>
+  </div>
+  <div class="field">
+    <%= f.label :Numero %><br>
+    <%= f.number_field :Numero %>
+  </div>
+  <div class="field">
+    <%= f.label :Complemento %><br>
+    <%= f.text_field :Complemento %>
+  </div>
+  <div class="field">
+    <%= f.label :TelefoneFixo %><br>
+    <%= f.text_field :TelefoneFixo %>
+  </div>
+  <div class="field">
+    <%= f.label :Celular %><br>
+    <%= f.text_field :Celular %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %><br>
+    <%= f.text_field :Email %>
+  </div>
+  <div class="field">
+    <%= f.label :Observacao %><br>
+    <%= f.text_area :Observacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

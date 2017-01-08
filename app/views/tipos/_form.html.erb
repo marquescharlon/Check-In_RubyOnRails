@@ -1,0 +1,33 @@
+<%= form_for @tipo, :html => { :class => "form-horizontal tipo" } do |f| %>
+
+  <% if @tipo.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@tipo.errors.count, "error") %> prohibited this tipo from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @tipo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nome, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nome) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), tipos_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

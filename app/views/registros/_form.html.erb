@@ -1,0 +1,55 @@
+<%= form_for @registro, :html => { :class => "form-horizontal registro" } do |f| %>
+
+  <% if @registro.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@registro.errors.count, "error") %> prohibited this registro from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @registro.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :referencia, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :referencia, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:referencia) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :descricao, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :descricao, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:descricao) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :observacao, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :observacao, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:observacao) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :concluido, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :concluido, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:concluido) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                registros_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

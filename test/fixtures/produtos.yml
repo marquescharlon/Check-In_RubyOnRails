@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imagem: MyString
+  nome: MyString
+  descricao: MyText
+  tipo_id: 
+  valor: 9.99
+  cupom: MyString
+  publicado: false
+
+two:
+  imagem: MyString
+  nome: MyString
+  descricao: MyText
+  tipo_id: 
+  valor: 9.99
+  cupom: MyString
+  publicado: false

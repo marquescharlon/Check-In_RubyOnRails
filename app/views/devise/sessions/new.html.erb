@@ -1,0 +1,70 @@
+
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	
+
+
+<video poster="" id="bgvid" playsinline autoplay muted loop>
+    <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
+    <!-- <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4"> -->
+    <source src="../videos/11390795.mp4" type="video/mp4">
+    </video>
+
+    <!-- http://bootsnipp.com/snippets/featured/full-page-log-in-with-background -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-7">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-user" aria-hidden="true"></i> Realizar login</div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">
+                                        Email</label>
+                                        <div class="col-sm-9">
+                                        	<%= f.text_field :email, :class => "form-control", :placeholder => "E-mail" %>
+                                            <!-- <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required> -->
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-3 control-label">
+                                            Senha</label>
+                                            <div class="col-sm-9">
+                                            	<%= f.password_field :password, :class => "form-control", :placeholder => "Senha" %>
+                                                <!-- <input type="password" class="form-control" id="inputPassword3" placeholder="Senha" required> -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                                <div class="checkbox">
+                                                    <label>
+                                                    	<%= f.check_box :remember_me %>
+                                                        <!-- <input type="checkbox"/> -->
+                                                        Lembrar-me
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group last">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                            	<%= f.submit t('.sign_in', :default => "Sign in"), :class => "btn btn-success btn-sm" %>
+                                                <!-- <button type="submit" class="btn btn-success btn-sm">
+                                                    Entrar</button> -->
+                                                    <button type="reset" class="btn btn-default btn-sm">
+                                                        Limpar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <%= render "devise/shared/links" %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br><br><br><br><br><br><br><br><br><br>
+
+                            <% end %>
+
+	

@@ -1,0 +1,6 @@
+<% codigo = User.first_or_create %>
+<% if codigo.mesa_codigo.blank? %>
+	<%= render 'form' %>
+<% else %>
+	<%= render 'form_cancelar' %>
+<% end %>

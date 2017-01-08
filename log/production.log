@@ -1,0 +1,4 @@
+I, [2016-10-26T02:26:19.562912 #7628]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
+I, [2016-10-26T02:40:01.701409 #6376]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
+I, [2016-10-26T02:44:09.982609 #7788]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
+I, [2016-10-27T16:01:38.300595 #6348]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.

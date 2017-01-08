@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cadeiras: 1
+  codigo: MyString
+  observacao: MyText
+  reservada: false
+
+two:
+  cadeiras: 1
+  codigo: MyString
+  observacao: MyText
+  reservada: false

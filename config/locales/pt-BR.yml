@@ -1,0 +1,488 @@
+pt-BR:
+  :true: 'Sim' 
+  :false: 'Não'
+  will_paginate:
+    previous_label: "&#171;"
+    next_label: "&#187;"
+    page_gap: "&hellip;"
+
+  
+  
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'A validação falhou: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Não é possível excluir o registro pois existe um %{record} dependente
+          has_many: Não é possível excluir o registro pois existem %{record} dependentes
+  models:
+    user: "Usuário"
+    article: "Artigo"
+  attributes:
+    user:
+      email: "E-mail"
+      password: "Senha"
+      password_confirmation: "Confirmar Senha"
+      current_password: "Senha Atual"
+      remember_me: "Lembre-se de mim"
+    article:
+      title: "Título"
+      body: "Conteúdo"
+      body_html: "Conteúdo em HTML"
+
+
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+    -
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
+    day_names:
+    - Domingo
+    - Segunda-feira
+    - Terça-feira
+    - Quarta-feira
+    - Quinta-feira
+    - Sexta-feira
+    - Sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
+    month_names:
+    -
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aprox. 1 hora
+        other: aprox. %{count} horas
+      about_x_months:
+        one: aprox. 1 mês
+        other: aprox. %{count} meses
+      about_x_years:
+        one: aprox. 1 ano
+        other: aprox. %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: "%{count} dias"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mês
+        other: "%{count} meses"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      model_invalid: 'A validação falhou: %{errors}'
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      required: deve existir
+      taken: já está em uso
+      too_long:
+        one: 'é muito longo (máximo: 1 caracter)'
+        other: 'é muito longo (máximo: %{count} caracteres)'
+      too_short:
+        one: 'é muito curto (mínimo: 1 caracter)'
+        other: 'é muito curto (mínimo: %{count} caracteres)'
+      wrong_length:
+        one: não possui o tamanho esperado (1 caracter)
+        other: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+    template:
+      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: 'Não foi possível gravar %{model}: 1 erro'
+        other: 'Não foi possível gravar %{model}: %{count} erros'
+  helpers:
+
+
+    links:
+      back: "Voltar"
+      cancel: "Cancelar"
+      confirm: "Você tem certeza?"
+      destroy: "Excluir"
+      edit: "Editar"
+      new: "Adicionar"
+    titles:
+      edit: "Editar"
+      save: "Salvar"
+      new: "Novo"
+      delete: "Deletar"
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%u %n"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+          unit: ''
+      format:
+        delimiter: "."
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: "."
+        format: "%n%"
+    precision:
+      format:
+        delimiter: "."
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
+  time:
+    am: ''
+    formats:
+      default: "%a, %d de %B de %Y, %H:%M:%S %z"
+      long: "%d de %B de %Y, %H:%M"
+      short: "%d de %B, %H:%M"
+    pm: ''
+
+  
+  # Devise pt-BR.yml
+  # Na linha 21 deixar o código desmarcado e mudar para 'pt-BR' caso não esteja. (config.i18n.default_locale = 'pt-BR')
+  devise: 
+    confirmations: 
+      confirmed: "Sua conta foi confirmada com sucesso. Seja bem-vindo(a)!"
+      new: 
+        resend_confirmation: "Reenviar as instruções de confirmação."
+      send_instructions: "Em poucos minutos, você receberá um email com as instruções sobre como confirmar a sua conta."
+    failure: 
+      user:
+        not_found_in_database: "Cadastro não encontrado."
+      already_authenticated: "Usuário já logado."
+      inactive: "Sua conta ainda não foi ativada."
+      invalid: "Nome de usuário ou senha inválidos."
+      invalid_token: "Token de autenticação inválido."
+      locked: "Sua conta está bloqueada."
+      timeout: "Sua sessão expirou; por favor, entre novamente para continuar."
+      unauthenticated: "Você precisa entrar ou se cadastrar antes de continuar."
+      unconfirmed: "Você deve confirmar a sua conta antes de continuar."
+    invitations: 
+      invitation_token_invalid: "Seu convite é inválido!"
+      send_instructions: "Seu convite foi enviado."
+      updated: "Sua senha foi definida com sucesso. Seja bem-vindo(a)!"
+    mailer: 
+      confirmation_instructions: 
+        confirm: "Confirmar minha conta"
+        subject: "Instruções para confirmação"
+        you_can_confirm: "Você pode confirmar a sua conta através do link abaixo:"
+      hello: "Oi %{email}!"
+      invitation_instructions: 
+        accept: "Aceitar convite"
+        ignore: "Se você não quer aceitar o convite, por favor ignore este e-mail."
+        no_account_till: "Sua conta não pode ser criada até que você acesse o link acima e se cadastre."
+        subject: "Você foi convidado(a) para participar em Diaspora!"
+      inviter: 
+        accept_at: "em %{url}, você pode aceitar através do link abaixo."
+        has_invited_you: "%{name}"
+        have_invited_you: "%{names} convidou você para participar em Diaspora"
+      reset_password_instructions: 
+        change: "Alterar minha senha"
+        ignore: "Se você não fez esta solicitação, por favor ignore este email."
+        someone_requested: "Recebemos um pedido para alterar a sua senha, e você pode fazer isso através do link abaixo."
+        subject: "Instruções para redefinir senha"
+        wont_change: "Sua senha permanecerá a mesma até que você acesse o link acima e a altere."
+      unlock_instructions: 
+        account_locked: "Sua conta foi bloqueada devido a uma quantidade excessiva de tentativas de entrar."
+        click_to_unlock: "Clique no link abaixo para desbloquear a sua conta:"
+        subject: "Instruções para Desbloquear"
+        unlock: "Desbloquear minha conta"
+      welcome: "Bem-vindo(a) %{email}!"
+    passwords: 
+      edit: 
+        change_password: "Mudar minha senha"
+      new: 
+        forgot_password: "Esqueceu sua senha?"
+        no_account: "Não há nenhuma conta com este email. Se você aguarda por um convite, seja paciente: estamos trabalhando para enviá-lo o quanto antes."
+        send_password_instructions: "Me envie instruções para redefinir minha senha."
+      send_instructions: "Você receberá em breve um email com instruções sobre como redefinir sua senha."
+      updated: "Sua senha foi alterada com sucesso."
+    registrations: 
+      destroyed: "Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve."
+      signed_up: "Você se inscreveu com êxito. Se habilitado, a confirmação foi enviada para seu e-mail."
+      updated: "Você atualizou a sua conta com sucesso."
+    sessions: 
+      new: 
+        alpha_software: "Você está prestes a usar um software alpha."
+        bugs_and_feedback: "Atenção, ainda há muitos defeitos para corrigir. Se algo de errado acontecer com você, pedimos que nos informe através do botão de Feedback à direita de seu navegador. Trabalharemos o mais rápido que pudermos para resolver qualquer problema que você reportar."
+        bugs_and_feedback_mobile: "Atenção, ainda há muito problemas para corrigir. Se algo de errado acontecer com você, pedimos que nos informe. Trabalharemos o mais rápido que pudermos para resolver qualquer problema que você reportar."
+        login: "Entrar"
+        modern_browsers: "somente suporta navegadores modernos."
+        password: "Senha"
+        remember_me: "Lembre-se de mim"
+        sign_in: "Entrar"
+        username: "Nome de usuário"
+      signed_in: "Você entrou com sucesso."
+      signed_out: "Você saiu com sucesso."
+    shared: 
+      links: 
+        forgot_your_password: "Esqueceu sua senha?"
+        receive_confirmation: "Não recebeu instruções de confirmação?"
+        receive_unlock: "Não recebeu instruções de desbloqueio?"
+        sign_in: "Entrar"
+        sign_up: "Cadastre-se"
+        sign_up_closed: "Registros abertos estão encerrados no momento."
+      mail_signup_form: 
+        sign_up_for_an_invite: "Registre-se para receber um convite!"
+    unlocks: 
+      new: 
+        resend_unlock: "Reenviar instruções de desbloqueio"
+      send_instructions: "Você receberá em breve um email com as instruções sobre como desbloquear a sua conta."
+      unlocked: "Sua conta foi desbloqueada com sucesso. Seja bem-vindo!"
+  errors: 
+    messages: 
+      already_confirmed: "já foi confirmado"
+      not_found: "não encontrado"
+      not_locked: "não foi bloqueado"
+
+  # Rails_admin pt-BR.yml
+  # Na linha 21 deixar o código desmarcado e mudar para 'pt-BR'. (config.i18n.default_locale = 'pt-BR')
+
+  views:
+    mesas:
+      created_at: "Criado em:"
+  admin:
+    home:
+      name: Home
+    pagination:
+      previous: "&laquo; Anterior"
+      next: "Próximo &raquo;"
+      truncate: "…"
+    misc:
+      search: "Procurar"
+      filter: "Filtrar"
+      refresh: "Atualizar"
+      show_all: "Mostrar tudo"
+      add_filter: "Novo Filtro..."
+      bulk_menu_title: "Itens selecionados..."
+      remove: "Remover"
+      add_new: "Criar Novo"
+      chosen: "%{name} escolhido"
+      chose_all: "Escolher tudo"
+      clear_all: "Limpar tudo"
+      up: "Cima"
+      down: "Baixo"
+      navigation: "Navegação"
+      log_out: "Terminar Sessão"
+      ago: "atrás"
+    flash:
+      successful: "%{name} %{action} com sucesso"
+      error: "%{name} %{action} sem sucesso"
+      noaction: "Nenhuma ação executada"
+      model_not_found: "Modelo '%{model}' não encontrado "
+      object_not_found: "%{model} com identificador '%{id}' não encontrado"
+    table_headers:
+      model_name: "Nome do modelo"
+      last_used: "Última vez usado em"
+      records: "Registros"
+      username: "Usuário"
+      changes: "Alterações"
+      created_at: "Data/Hora"
+      item: "Item"
+      message: "Mensagem"
+    actions:
+      dashboard:
+        title: "Administração do Sistema"
+        menu: "Painel Administrador"
+        breadcrumb: "Painel principal"
+      index:
+        title: "Lista de %{model_label_plural}"
+        menu: "Lista"
+        breadcrumb: "%{model_label_plural}"
+      show:
+        title: "Detalhes para %{model_label} '%{object_label}'"
+        menu: "Mostrar"
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: "Mostrar na aplicação"
+      new:
+        title: "Novo(a) %{model_label}"
+        menu: "Criar novo"
+        breadcrumb: "Novo"
+        link: "Criar um novo %{model_label}"
+        done: "criado"
+      edit: 
+        title: "Editar %{model_label} '%{object_label}'"
+        menu: "Editar"
+        breadcrumb: "Editar"
+        link: "Editar este %{model_label}"
+        done: "atualizado"
+      delete:
+        title: "Remover %{model_label} '%{object_label}'"
+        menu: "Remover"
+        breadcrumb: "Remover"
+        link: "Remover '%{object_label}'"
+        done: "removido"
+      bulk_delete:
+        title: "Remover %{model_label_plural}"
+        menu: "Remover vários"
+        breadcrumb: "Remover vários"
+        bulk_link: "Remover selecionados %{model_label_plural}"
+      export:
+        title: "Exportar %{model_label}"
+        menu: "Exportar"
+        breadcrumb: "Exportar"
+        link: "Exportar %{model_label_plural} encontrados"
+        bulk_link: "Exportar %{model_label_plural} selecionados"
+        done: "exportados"
+      history_index:
+        title: "Histórico para %{model_label_plural}"
+        menu: "Histórico"
+        breadcrumb: "Histórico"
+      history_show:
+        title: "Histórico para %{model_label} '%{object_label}'"
+        menu: "Histórico"
+        breadcrumb: "Histórico"
+    form:
+      cancel: "Cancelar"
+      basic_info: "Informação Básica"
+      required: "Obrigatórios"
+      optional: "Opcional"
+      one_char: "caracter"
+      char_length_up_to: "comprimento até"
+      char_length_of: "comprimento de"
+      save: "Gravar"
+      save_and_add_another: "Gravar e criar outro"
+      save_and_edit: "Gravar e editar"
+      all_of_the_following_related_items_will_be_deleted: "? Os seguintes item serão apagados ou deixados orfãos:"
+      are_you_sure_you_want_to_delete_the_object: "Tem a certeza que quer apagar este %{model_name}"
+      confirmation: "Sim, tenho a certeza"
+      delete_confirmation: "Confirmar apagar"
+      bulk_delete: "Os seguintes objetos serão apagados, o que pode apagar ou deixar orfãos as dependências relacionadas"
+    export:      
+      confirmation: "Exportar para %{name}"
+      select: "Selecionar campos para exportar"
+      fields_from: "Campos de %{name}"
+      fields_from_associated: "Campos associados com %{name}"
+      display: "Mostrar %{name}: %{type}"
+      options_for: "Opções para %{name}"
+      empty_value_for_associated_objects: "<vazio>"
+      click_to_reverse_selection: 'Click para inverter selecção'
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "Codificar para"
+        encoding_to_help: "Escolha a codificação. Deixe em branco para manter a codificação original: (%{name})"
+        skip_header: "Sem cabeçalho"
+        skip_header_help: "Não gerar cabeçalhos para (Campos sem cabeçalho)"
+        default_col_sep: ","
+        col_sep: "Separador de colunas"
+        col_sep_help: "Deixar em branco para usar omissão ('%{value}')" # value is default_col_sep

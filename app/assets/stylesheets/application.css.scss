@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require devise_bootstrap_views
+ */
+
+ @import "font-awesome";
+
+
+
+body {  
+  background-color: #fafafa;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+h3{
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	color: #975535;
+}
+h6{
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+a:visited {
+    color: #660000;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+.footer {
+  position: relative;
+  bottom: -20px;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  size:12px;
+  text-align: center;
+}
