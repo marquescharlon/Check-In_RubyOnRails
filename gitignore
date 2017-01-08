@@ -118,6 +118,10 @@ bower.json
 /test/version_tmp/
 /tmp/
 
+# Usado para ocultar a pasta tmp.
+/tmp
+
+
 # Used by dotenv library to load environment variables.
 # .env
 
