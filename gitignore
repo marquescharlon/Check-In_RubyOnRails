@@ -146,6 +146,7 @@ build-iPhoneSimulator/
 /_yardoc/
 /doc/
 /rdoc/
+/doc/api
 
 ## Environment normalization:
 /.bundle/
@@ -236,5 +237,9 @@ hs_err_pid*
 /log/*
 !/log/.keep
 /tmp
+/tmp/cache/assets/sprockets/v3.0
+/tmp/*
+/tmp*
+/test/*
 
 # End of https://www.gitignore.io/api/coffeescript,git,java,node,rails,ruby,sublimetext,windows

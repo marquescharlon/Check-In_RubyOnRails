@@ -1,10 +1,10 @@
 # O que é?
 
-É um sistema cujo objetivo é apresentar uma forma de ganhar tempo ao realizar uma reserva de uma mesa em um estabelecimento. Além de servir como apoio para aqueles que estiverem começando aprender a programar em Ruby. Todas as dificuldades, erros e soluções foram documentadas no próprio sistema, com isso, podendo servir como base de conhecimento.
+É um sistema cujo objetivo é ganhar tempo ao realizar uma reserva de uma mesa em um estabelecimento. Além de servir como apoio para aqueles que estiverem começando aprender a programar em Ruby. Todas as dificuldades, erros e soluções foram documentadas no próprio sistema, com isso, podendo servir como base de conhecimento. No entanto, logo abaixo você irá encontrar uma lista de erros que ocorreram durante o desenvolvimento e suas soluções.
 
 ### Assista o vídeo mostrando como funciona:
 
-[![CHECK-IN DE MESA](https://img.youtube.com/vi/yJKiZyIY3YE/0.jpg)](https://www.youtube.com/watch?v=yJKiZyIY3YE)
+[![CHECK-IN DE MESA](https://github.com/marquescharlon/check-in_ruby_tcc/tree/master/public/images/check-in_youtube.JPG)](https://www.youtube.com/watch?v=yJKiZyIY3YE)
 
 ### Detalhes
 
@@ -30,7 +30,7 @@
 3. Instalação do Rails e Bundle
 4. Executar o sistema
 
-> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leia a apostila: https://www.caelum.com.br/apostila-ruby-on-rails/. Embora seja paga, recomendo pois é a melhor que até hoje encontrei https://www.nostarch.com/railscrashcourse.
+> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leia a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/). Embora seja paga, recomendo pois é a melhor que até hoje encontrei [Rails Crash Course](https://www.nostarch.com/railscrashcourse).
 
 # 1. Instalação "MySQL, Ruby e DevKit"
 
@@ -51,7 +51,7 @@
 
 1. Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby ```(C:/Ruby22-x64)```;
 2. Executar o comando: ```gem install json --platform=ruby```, se abrir uma janela pedindo permissão você clicará em "Permitir acesso";
-3. Executar o comando: ```ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"``` para confirmar que o Json está funcionando (Fique atento as aspas duplas);
+3. Executar o comando: ```ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"``` para confirmar que o Json está funcionando;
 
 # 3. Instalação do Rails e Bundle
 
@@ -64,7 +64,7 @@
 - Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto;
 - Executar o comando: ```rails s``` e aguardar até o servidor ser iniciado por completo;
 - Abra o navegador e acesse o endereço [http://localhost:3000/](http://localhost:3000/);
-- Pronto! O sistema deverá rodar.
+- Pronto! O sistema ```Qro Check-in de Mesa``` será carregado.
 
 # Erros, dificuldades e soluções
 
