@@ -41,7 +41,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 3. Instalação do Rails e Bundle
 4. Executar o sistema
 
-> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leiam a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/). Embora seja paga, recomendo pois é a melhor que até hoje encontrei [Rails Crash Course](https://www.nostarch.com/railscrashcourse).
+> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leiam a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/) e [Rails Crash Course](https://www.nostarch.com/railscrashcourse).
 
 # 1. Instalação "MySQL, Ruby e DevKit"
 
