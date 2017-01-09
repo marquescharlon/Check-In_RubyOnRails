@@ -41,7 +41,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 3. Instalação do Rails e Bundle
 4. Executar o sistema
 
-<p align="justify"> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leiam a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/). Embora seja paga, recomendo pois é a melhor que até hoje encontrei [Rails Crash Course](https://www.nostarch.com/railscrashcourse).</p>
+> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leiam a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/). Embora seja paga, recomendo pois é a melhor que até hoje encontrei [Rails Crash Course](https://www.nostarch.com/railscrashcourse).
 
 # 1. Instalação "MySQL, Ruby e DevKit"
 
@@ -164,7 +164,7 @@ por:
 **Erro/Solução:**
 <br>O Rails_admin acusou o seguinte ```erro: undefined method per for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
 <p align="justify">
-> Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:
+Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:
 </p>
 ```tex
 Kaminari.configure do |config|
@@ -234,7 +234,7 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
 </ol>
 ```
 **Observação:**
-<br><p align="justify">Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
+<p align="justify">Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
 
 Para o breadcrumb aparecer nas páginas **show**, **new** e **edit** foi preciso adicionar os seguintes comandos em cada um deles:
 ```tex
