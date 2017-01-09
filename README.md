@@ -6,13 +6,12 @@ Sistema simples, mas seu objetivo é apresentar uma forma de ganhar tempo ao rea
 
 == Detalhes
 
-**Ruby version**
-ruby 2.2.4p230 (2015-12-16 revision 53155) [x64-mingw32]
+Ruby version: ruby 2.2.4p230 (2015-12-16 revision 53155) [x64-mingw32]
 
-**Sistema Operacional**
-Windows 7 Ultimate 64bit
+Sistema Operacional: Windows 7 Ultimate 64bit
 
-**Ferramentas utilizadas**
+** Ferramentas utilizadas
+
 RubyInstaller 2.2.4-x64;
 DevKit-mingw64-64-4.7.2-20130224-1432-sfx;
 Ruby On Rails v4.2.3;
@@ -28,8 +27,7 @@ Para utilizar o projeto em sua máquina será necessário seguir os seguintes pa
 1. Instalação "MySQL, Ruby e DevKit"
 2. Configuração do DevKit
 3. Instalação do Rails e Bundle
-4. Abrir o projeto no "prompt de comando"
-5. Executar o comando 
+4. Executar o sistema
 
 > Caso seja sua primeira vez com o Ruby On Rails, por favor, leia a apostila: https://www.caelum.com.br/apostila-ruby-on-rails/ ou comprar a apostila https://www.nostarch.com/railscrashcourse.
 
@@ -60,7 +58,7 @@ Executar o comando: "ruby -rubygems -e "require 'json'; puts JSON.load('[42]').i
 * Executar o comando: "gem install rails" e aguarde, demora um pouco mesmo;
 * Depois, execute o comando "bundle install";
 
-== Executar o sistema
+== 4. Executar o sistema
 
 * Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto (C:/PROJETOS/novoContato);
 * Executar o comando: "rails s" e aguardar até o servidor ser iniciado por completo;
@@ -71,17 +69,17 @@ Executar o comando: "ruby -rubygems -e "require 'json'; puts JSON.load('[42]').i
 
 1. config/initializers/rails_admin.rb
 	
-	* Adicionar um título (label) para o model Produto, que consequentimente é o pai dos models Tipo e Mesa
+* Adicionar um título (label) para o model Produto, que consequentimente é o pai dos models Tipo e Mesa
   
-	config.model 'Mesa' do
-	  navigation_label 'Estabelecimento'
-	end
-	 config.model 'Produto' do
-	  navigation_label 'Cardápio Online'
-	end
-	config.model 'Registro' do
-	  navigation_label 'DESENVOLVIMENTO'
-	end
+config.model 'Mesa' do
+	navigation_label 'Estabelecimento'
+end
+config.model 'Produto' do
+	navigation_label 'Cardápio Online'
+end
+config.model 'Registro' do
+	navigation_label 'DESENVOLVIMENTO'
+end
 
   	* Para excluir os models do painel administrativo
   	config.excluded_models = ["Tipo","Mesa"]
