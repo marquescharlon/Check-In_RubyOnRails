@@ -1,28 +1,29 @@
 [![CHECK-IN DE MESA](https://img.youtube.com/vi/yJKiZyIY3YE/0.jpg)](https://www.youtube.com/watch?v=yJKiZyIY3YE)
 
-== README
+# O que é?
 
 Sistema simples, mas seu objetivo é apresentar uma forma de ganhar tempo ao realizar uma reserva de uma mesa em um estabelecimento. Além de servir como apoio para aqueles que estiverem começando aprender a programar em Ruby. Todas as dificuldades, erros e soluções foram documentadas no próprio sistema, com isso, podendo servir como base de conhecimento.
 
-== Detalhes
+### Detalhes
 
-Ruby version: ruby 2.2.4p230 (2015-12-16 revision 53155) [x64-mingw32]
+- Ruby version: 
+ruby 2.2.4p230 (2015-12-16 revision 53155) [x64-mingw32]
+- Sistema Operacional: 
+Windows 7 Ultimate 64bit
 
-Sistema Operacional: Windows 7 Ultimate 64bit
+**Ferramentas utilizadas**
 
-** Ferramentas utilizadas
+- RubyInstaller 2.2.4-x64;
+- DevKit-mingw64-64-4.7.2-20130224-1432-sfx;
+- Ruby On Rails v4.2.3;
+- Sublime Text v3;
+- Twitter Bootstrap Rails v3;
+- MySQL v5.7.12.0;
+- Métodos Ágeis: Extreme Programming (XP);
 
-RubyInstaller 2.2.4-x64;
-DevKit-mingw64-64-4.7.2-20130224-1432-sfx;
-Ruby On Rails v4.2.3;
-Sublime Text v3;
-Twitter Bootstrap Rails v3;
-MySQL v5.7.12.0;
-Métodos Ágeis: Extreme Programming (XP);
+# Por onde começo?
 
-== Por onde começo?
-
-Para utilizar o projeto em sua máquina será necessário seguir os seguintes passos:
+**Para utilizar o projeto em sua máquina será necessário seguir os seguintes passos:**
 
 1. Instalação "MySQL, Ruby e DevKit"
 2. Configuração do DevKit
@@ -31,20 +32,20 @@ Para utilizar o projeto em sua máquina será necessário seguir os seguintes pa
 
 > Caso seja sua primeira vez com o Ruby On Rails, por favor, leia a apostila: https://www.caelum.com.br/apostila-ruby-on-rails/ ou comprar a apostila https://www.nostarch.com/railscrashcourse.
 
-== 1. Instalação "MySQL, Ruby e DevKit"
+# 1. Instalação "MySQL, Ruby e DevKit"
 
-* Clique [aqui](https://dev.mysql.com/downloads/mysql/) para baixar o MySQL, faça a instalação.
-* Clique [aqui](https://rubyinstaller.org/downloads/) para baixar o Ruby versão => 2.2.4. Fique atento também quanto a versão do seu Sistema Operacional, se é 32 ou 64 bit.
-* Agora é só aplicar o velho next, next e finish.
+- Clique [aqui](https://dev.mysql.com/downloads/mysql/) para baixar o MySQL, faça a instalação.
+- Clique [aqui](https://rubyinstaller.org/downloads/) para baixar o Ruby versão => 2.2.4. Fique atento também quanto a versão do seu Sistema Operacional, se é 32 ou 64 bit.
+- Agora é só aplicar o velho next, next e finish.
 
-== 2. Configuração do DevKit
+# 2. Configuração do DevKit
 
-* No mesmo [site](https://rubyinstaller.org/downloads/) baixe o DevKit, cuja versão corresponda ao seu Sistema Operacional.
-* Extrair o DevKit "DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe" para o diretório (C:/Devkit/);
-* Abrir o Prompt(Modo Administrador) e acessar o diretório do DevKit (C:/Devkit/);
-* Executar o comando: "ruby dk.rb init";
-* Verificar se no arquivo "config.yml" (C:/Devkit/) possui o conteúdo "C:/Ruby22-x64";
-* Executar o comando: "ruby dk.rb install";
+- No mesmo [site](https://rubyinstaller.org/downloads/) baixe o DevKit, cuja versão corresponda ao seu Sistema Operacional.
+- Extrair o DevKit "DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe" para o diretório (C:/Devkit/);
+- Abrir o Prompt(Modo Administrador) e acessar o diretório do DevKit (C:/Devkit/);
+- Executar o comando: "ruby dk.rb init";
+- Verificar se no arquivo "config.yml" (C:/Devkit/) possui o conteúdo "C:/Ruby22-x64";
+- Executar o comando: "ruby dk.rb install";
 
 **Testar se o JSON está funcionando**
 
@@ -52,25 +53,25 @@ Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby (C:/Ruby22-x64
 Executar o comando: "gem install json --platform=ruby", se abrir uma janela pedindo permissão você clicará em "Permitir acesso";
 Executar o comando: "ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"" para confirmar que o Json está funcionando (Fique atento as aspas duplas);
 
-== 3. Instalação do Rails e Bundle
+# 3. Instalação do Rails e Bundle
 
-* Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby (C:/Ruby22-x64);
-* Executar o comando: "gem install rails" e aguarde, demora um pouco mesmo;
-* Depois, execute o comando "bundle install";
+- Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby (C:/Ruby22-x64);
+- Executar o comando: "gem install rails" e aguarde, demora um pouco mesmo;
+- Depois, execute o comando "bundle install";
 
-== 4. Executar o sistema
+# 4. Executar o sistema
 
-* Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto (C:/PROJETOS/novoContato);
-* Executar o comando: "rails s" e aguardar até o servidor ser iniciado por completo;
-* Abra o navegador e acesse o endereço "http://localhost:3000/";
-* Pronto! O sistema deverá rodar.
+- Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto (C:/PROJETOS/novoContato);
+- Executar o comando: "rails s" e aguardar até o servidor ser iniciado por completo;
+- Abra o navegador e acesse o endereço "http://localhost:3000/";
+- Pronto! O sistema deverá rodar.
 
-== Erros, dificuldades e soluções
+# Erros, dificuldades e soluções
 
 1. config/initializers/rails_admin.rb
 	
-* Adicionar um título (label) para o model Produto, que consequentimente é o pai dos models Tipo e Mesa
-  
+- Adicionar um título (label) para o model Produto, que consequentimente é o pai dos models Tipo e Mesa
+ ```tex
 config.model 'Mesa' do
 	navigation_label 'Estabelecimento'
 end
@@ -81,30 +82,31 @@ config.model 'Registro' do
 	navigation_label 'DESENVOLVIMENTO'
 end
 
-  	* Para excluir os models do painel administrativo
-  	config.excluded_models = ["Tipo","Mesa"]
+# Para excluir os models do painel administrativo
+config.excluded_models = ["Tipo","Mesa"]
 
-	* Para incluir os models no painel administrativo
-	config.included_models = ["Tipo","Mesa"]
+# Para incluir os models no painel administrativo
+config.included_models = ["Tipo","Mesa"]
 
-	* Definir parent entre os models
-	Os model Tipo é considerado filho do pai Produto. Excemplo:
+# Definir parent entre os models
+Os model Tipo é considerado filho do pai Produto. Excemplo:
 
-	Produto
-	-> Tipo
+Produto
+-> Tipo
 
-	config.model 'Tipo' do
-     parent Produto
-	end
+config.model 'Tipo' do
+ parent Produto
+end
 
-	* Define o título (label) para os links static
-  	config.navigation_static_label = "Acesso rápido"
-  	config.navigation_static_links = {
- 	   'Página principal' => 'http://localhost:3000',
- 	   'Mesas' => 'http://localhost:3000/mesas',
- 	   'Produtos' => 'http://localhost:3000/produtos',
-	    'Tipos' => 'http://localhost:3000/tipos'
-	  }
+# Define o título (label) para os links static
+config.navigation_static_label = "Acesso rápido"
+config.navigation_static_links = {
+   'Página principal' => 'http://localhost:3000',
+   'Mesas' => 'http://localhost:3000/mesas',
+   'Produtos' => 'http://localhost:3000/produtos',
+'Tipos' => 'http://localhost:3000/tipos'
+}
+ ```
 
 	* Referências:
 	https://github.com/sferik/rails_admin/wiki
@@ -475,6 +477,6 @@ end
 	https://github.com/plataformatec/devise
 	http://guides.railsgirls.com/devise
 
-== CONCLUSÃO
+# CONCLUSÃO
 
 Conclui-se que, este projeto atende uma das necessidades encontradas em um estabelecimento, que é a reserva de uma mesa. Em alguns casos submetendo o cliente a uma fila absurda e obrigando-o a esperar sem nenhum conforto até que alguma mesa esteja desocupada. Para o desenvolvimento deste sistema foi necessário enfrentar diversos desafios, entre eles está a própria linguagem de programação utilizada (Ruby), ainda sendo nova no mercado e pouca discutida em ambientes acadêmicos. Outros métodos que estão adquirindo espaço no mercado aos poucos são os métodos ágeis, utilizados neste trabalho para proporcionar o desenvolvimento em um tempo hábil. O sistema apresentado neste trabalho oferece a possibilidade de realizar a reserva da mesa online. Há a necessidade apenas de realizar o check-in na entrada do estabelecimento, pois, um pré-cadastro já foi realizado pelo próprio cliente. Assim como é feita a reserva de uma passagem aérea, tal qual, é realizada online e tendo em vista seu check-in antes do embarque, também será a reserva e o check-in da mesa. Isso proporciona não só conforto, mas a segurança de que ao chegar no estabelecimento será atendido sem a necessidade de enfrentar filas, pois, o seu cadastro já foi feito e a mesa já está reservada.
