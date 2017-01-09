@@ -145,8 +145,8 @@ por:
 <%= will_paginate @produtos, renderer: BootstrapPagination::Rails %>
 ```
 
-**Error/Solução:**
-<br>O Rails_admin acusou o seguinte ```erro: undefined method `per' for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
+**Erro/Solução:**
+<br>O Rails_admin acusou o seguinte ```erro: undefined method per for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
 
 <p align="justify">Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:</p>
 
@@ -216,8 +216,8 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
   <%= render_breadcrumbs :tag => :li, :separator => "" %>
 </ol>
 ```
-<p align="justify">**Observação:**
-<br>Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
+**Observação:**
+<p align="justify">Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
 
 Para o breadcrumb aparecer nas páginas **show**, **new** e **edit** foi preciso adicionar os seguintes comandos em cada um deles:
 ```tex
@@ -390,7 +390,7 @@ end
 - Necessário apenas iniciar o servidor (rails s).
 
 **Observação:**
-<br>Para utilizar no index.html.erb necessário apenas adicionar a tag ```<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```<i class="fa fa-bell"></i>```.
+<br>Para utilizar no **index.html.erb** necessário apenas adicionar a tag ```<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```<i class="fa fa-bell"></i>```.
 
 **Referências:**
 <br>[https://github.com/bokmann/font-awesome-rails](https://github.com/bokmann/font-awesome-rails)
@@ -422,7 +422,7 @@ Para apresentar os valores com esta formatação na view é necessário criar um
 - Adicionar no helper, no meu caso, por exemplo, ProdutosHelper:
 ```tex
 def valor_decimal(x)
-    	x = number_to_currency(x, unit: "R$", separator: ",", delimiter: "")
+    x = number_to_currency(x, unit: "R$", separator: ",", delimiter: "")
 end
 ```
 - Adicionar na view, no meu caso, por exemplo, (app/views/produtos/index.html.erb):
@@ -450,11 +450,11 @@ Make sure that `gem install rake -v '11.3.0'` succeeds before bundling.
 
 <p align="justify">Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei várias possibilidades, até mesmo disponibilizado pela própria empresa Ruby, mas só depois de dois dias batalhando, além de ter que reinstalar o windows (por ter corrompido com alguma coisa, é coisa de windows, certo!).</p> 
 
-- Visite o endereço: [https://rubygems.org/pages/download#formats](https://rubygems.org/pages/download#formats)
-- Fazer o download ZIP.
-- Extrair o conteúdo. Dentro da pasta rubygems-x.y.z execute o comando Ruby setup.rb.
-- Pronto! Como realizei uma nova instalação foi preciso apenas testar o Devkit e instalar o json e bundler.
-- Já que possuo o projeto e dentro o arquivo GEMFILE que possui a relação de todas dependências do projeto. Então, necessário apenas acessar o projeto pelo prompt e executar o comando "bundler install".
+1. Visite o endereço: [https://rubygems.org/pages/download#formats](https://rubygems.org/pages/download#formats)
+2. Fazer o download ZIP.
+3. Extrair o conteúdo. Dentro da pasta rubygems-x.y.z execute o comando Ruby setup.rb.
+4. Pronto! Como realizei uma nova instalação foi preciso apenas testar o Devkit e instalar o json e bundler.
+5. Já que possuo o projeto e dentro o arquivo GEMFILE que possui a relação de todas dependências do projeto. Então, necessário apenas acessar o projeto pelo prompt e executar o comando "bundler install".
 
 **Documentaçao DevKit:**
 <br>[https://github.com/oneclick/rubyinstaller/wiki/Development-Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
@@ -477,10 +477,8 @@ Make sure that `gem install rake -v '11.3.0'` succeeds before bundling.
 ```
 - Acessar o arquivo ```app/views/ideas/show.html.erb``` e remover a linha ```<p id="notice"><%= notice %></p>```.
 Fazer o mesmo para os demais arquivos.
-
-- Gerar o model User: rails g devise user
+- Gerar o model User: ```rails g devise user```
 - rake db:migrate
-
 - Basta acessar o caminho [http://localhost:3000/users/sign_up](http://localhost:3000/users/sign_up) e realizar o teste criando um usuário.
 - Para adicionar notificações basta abrir o arquivo ```app/views/layouts/application.html.erb``` e adicionar o conteúdo abaixo logo depois da barra de menus ```<ul class="nav">```:
 ```tex
