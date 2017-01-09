@@ -109,8 +109,8 @@ config.navigation_static_links = {
  ```
 
 **Referências:**
-[https://github.com/sferik/rails_admin/wiki](https://github.com/sferik/rails_admin/wiki)<br>
-[https://github.com/sferik/rails_admin/wiki/Navigation](https://github.com/sferik/rails_admin/wiki/Navigation)
+<br>[https://github.com/sferik/rails_admin/wiki](https://github.com/sferik/rails_admin/wiki)
+<br>[https://github.com/sferik/rails_admin/wiki/Navigation](https://github.com/sferik/rails_admin/wiki/Navigation)
 
 ### 2. Instalando gem 'will_paginate'
 
@@ -119,7 +119,7 @@ config.navigation_static_links = {
 - No controller produtos troca o comando ```@produtos = Produto.all``` por: ```@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')```
 
 **Referência:**
-[https://github.com/mislav/will_paginate](https://github.com/mislav/will_paginate)
+<br>[https://github.com/mislav/will_paginate](https://github.com/mislav/will_paginate)
 
 - Adicionar o comando ```<%= will_paginate @produtos%>``` na página index da view produtos.
 
@@ -146,9 +146,9 @@ end
 ```
 
 **Referência:**
-<p>[https://github.com/bootstrap-ruby/will_paginate-bootstrap](https://github.com/bootstrap-ruby/will_paginate-bootstrap)</p>
-<p>[https://github.com/sferik/rails_admin/issues/1420](https://github.com/sferik/rails_admin/issues/1420)</p>
-<p>[https://github.com/sferik/rails_admin/wiki/Troubleshoot](https://github.com/sferik/rails_admin/wiki/Troubleshoot)</p>
+<br>[https://github.com/bootstrap-ruby/will_paginate-bootstrap](https://github.com/bootstrap-ruby/will_paginate-bootstrap)
+<br>[https://github.com/sferik/rails_admin/issues/1420](https://github.com/sferik/rails_admin/issues/1420)
+<br>[https://github.com/sferik/rails_admin/wiki/Troubleshoot](https://github.com/sferik/rails_admin/wiki/Troubleshoot)
 
 ### 3. Configurar o botão Pesquisar/Buscar produto:
 	
@@ -239,7 +239,7 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
 ```
 
 **Referência:**
-[https://github.com/weppos/breadcrumbs_on_rails](https://github.com/weppos/breadcrumbs_on_rails)
+<br>[https://github.com/weppos/breadcrumbs_on_rails](https://github.com/weppos/breadcrumbs_on_rails)
 
 ### 5. Validando Model Mesa:
 ```tex
@@ -255,8 +255,8 @@ length: { minimum: 8, maximum: 20}
 Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
 
 **Referências:**
-[http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
-[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html](http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html)
+<br>[http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
+<br>[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html](http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html)
 
 ### 6. Video como background da página principal:
 
@@ -382,9 +382,9 @@ Onde está ```(:Port => 3000)```, você pode definir a porta que for preciso.
 Para utilizar no index.html.erb necessário apenas adicionar a tag ```<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```<i class="fa fa-bell"></i>```.
 
 **Referências:**
-[https://github.com/bokmann/font-awesome-rails](https://github.com/bokmann/font-awesome-rails)
-[http://fontawesome.io/examples/](http://fontawesome.io/examples/)
-[http://fontawesome.io/icons/](http://fontawesome.io/icons/)
+<br>[https://github.com/bokmann/font-awesome-rails](https://github.com/bokmann/font-awesome-rails)
+<br>[http://fontawesome.io/examples/](http://fontawesome.io/examples/)
+<br>[http://fontawesome.io/icons/](http://fontawesome.io/icons/)
 
 ### 10. Erro: Rake aborted!
 ```tex
@@ -422,7 +422,7 @@ end
 É só acessar a documentação para verificar outras formatações.
 
 **Referências:**
-[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency)
+<br>[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency)
 
 ### 12. Error: Server certificate B: certificate verify failed - certificado
 
@@ -446,7 +446,7 @@ Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei 
 - Já que possuo o projeto e dentro o arquivo GEMFILE que possui a relação de todas dependências do projeto. Então, necessário apenas acessar o projeto pelo prompt e executar o comando "bundler install".
 
 **Documentaçao DevKit:**
-[https://github.com/oneclick/rubyinstaller/wiki/Development-Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
+<br>[https://github.com/oneclick/rubyinstaller/wiki/Development-Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
 
 ### 13. Gemfile / gem 'devise'
 
@@ -488,8 +488,8 @@ Fazer o mesmo para os demais arquivos.
 before_action :authenticate_user!
 ```
 **Referências:**
-[https://github.com/plataformatec/devise](https://github.com/plataformatec/devise)
-[http://guides.railsgirls.com/devise](http://guides.railsgirls.com/devise)
+<br>[https://github.com/plataformatec/devise](https://github.com/plataformatec/devise)
+<br>[http://guides.railsgirls.com/devise](http://guides.railsgirls.com/devise)
 
 # CONCLUSÃO
 
