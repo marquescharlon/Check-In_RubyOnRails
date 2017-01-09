@@ -135,7 +135,14 @@ config.navigation_static_links = {
 
 - gem 'will_paginate', '~> 3.1'
 - bundle install
-- No controller produtos troca o comando ```@produtos = Produto.all``` por: ```@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')```
+- No controller produtos troca o comando: 
+```tex
+@produtos = Produto.all
+```
+por:
+```tex
+@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')
+```
 
 **Referência:**
 <br>[https://github.com/mislav/will_paginate](https://github.com/mislav/will_paginate)
@@ -156,9 +163,9 @@ por:
 
 **Erro/Solução:**
 <br>O Rails_admin acusou o seguinte ```erro: undefined method per for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
-
-<p align="justify">Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:</p>
-
+<p align="justify">
+> Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:
+</p>
 ```tex
 Kaminari.configure do |config|
   config.page_method_name = :per_page_kaminari
@@ -211,7 +218,8 @@ Para adicionar o breadcrumb é necessário instalar a gem:
 
 - gem "breadcrumbs_on_rails"
 - bundle install
-- Adicionar no "app/controllers/application_controller.rb" o comando abaixo, para definir o caminho para a página principal em todas as páginas.
+- Adicionar no ```app/controllers/application_controller.rb``` o comando abaixo, para definir o caminho para a página principal em todas as páginas.
+
 ```tex
 add_breadcrumb "Página principal", :root_path, :options => { :title => "Página principal" } 
 ```
@@ -225,9 +233,8 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
   <%= render_breadcrumbs :tag => :li, :separator => "" %>
 </ol>
 ```
-<p align="justify">
 **Observação:**
-<br>Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
+<br><p align="justify">Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
 
 Para o breadcrumb aparecer nas páginas **show**, **new** e **edit** foi preciso adicionar os seguintes comandos em cada um deles:
 ```tex
