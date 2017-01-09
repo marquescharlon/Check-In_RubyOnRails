@@ -85,7 +85,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 Isso foi logo após gerar o meu primeiro projeto, os botoes **New** e **Edit** funcionavam, porém, o botão **Delete** não. A solução foi instalar o [node-v4.4.5-x86](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/node-v4.4.5-x86.msi), após a instalação o meu funcionou. Talvez fosse por falta de alguma biblioteca.
 
 **Observação:**
-<br>Tentei outras versões, porém, só essa é que deu certo.
+> Tentei outras versões, porém, só essa é que deu certo.
 
 ### 2. config/initializers/rails_admin.rb
 	
@@ -210,7 +210,7 @@ Por último, foi necessário criar a ação para o formulário de busca localiza
 </form>
 ```
 **Observação:**
-<br>O comando ```.where(:publicado => true)``` é para trazer apenas produtos que estejam marcados como publicado pelo administrador.
+> O comando ```.where(:publicado => true)``` é para trazer apenas produtos que estejam marcados como publicado pelo administrador.
 
 ### 5. Breadcrumb para rails
 
@@ -233,8 +233,9 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
   <%= render_breadcrumbs :tag => :li, :separator => "" %>
 </ol>
 ```
+
 **Observação:**
-<p align="justify">Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
+> Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
 
 Para o breadcrumb aparecer nas páginas **show**, **new** e **edit** foi preciso adicionar os seguintes comandos em cada um deles:
 ```tex
@@ -280,7 +281,7 @@ uniqueness: { case_sensitive: false },
 length: { minimum: 8, maximum: 20}
 ```
 **Observação:**
-<br>Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
+> Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
 
 **Referências:**
 <br>[http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
@@ -370,7 +371,7 @@ Adicionar os códigos abaixo na página principal (app/views/pages/index.html.er
                             </div>
 ```
 **Observação:**
-<br>Ainda falta adicionar a GEM e criar as sessões, esse é só um preview. 
+> Ainda falta adicionar a GEM e criar as sessões, esse é só um preview. 
 
 ### 9. Definir Porta Padrão para rodar o projeto Ruby On Rails
 	
@@ -387,7 +388,7 @@ module Rails
 end
 ```
 **Observação:**
-<br>Onde está ```(:Port => 3000)```, você pode definir a porta que for preciso.
+> Onde está ```(:Port => 3000)```, você pode definir a porta que for preciso.
 
 ### 10. Gemfile / gem "font-awesome-rails"
 
@@ -404,7 +405,7 @@ end
 - Necessário apenas iniciar o servidor (rails s).
 
 **Observação:**
-<br>Para utilizar no **index.html.erb** necessário apenas adicionar a tag ```<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```<i class="fa fa-bell"></i>```.
+> Para utilizar no **index.html.erb** necessário apenas adicionar a tag ```<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```<i class="fa fa-bell"></i>```.
 
 **Referências:**
 <br>[https://github.com/bokmann/font-awesome-rails](https://github.com/bokmann/font-awesome-rails)
@@ -427,7 +428,7 @@ C:/Users/CHARLON/Dropbox/UNICA/TCC/qro/Rakefile:4:in `<top (required)>'
 (See full trace by running task with --trace)
 ```
 **Observação:**
-<br>Foi necessário apenas excluir o arquivo ```Gemfile.lock```, logo em seguida executar o ```rake db:migrate```.
+> Foi necessário apenas excluir o arquivo ```Gemfile.lock```, logo em seguida executar o ```rake db:migrate```.
 
 ### 12. Formatar :decimal (R$ 00,00)
 
@@ -444,7 +445,7 @@ end
 <%= valor_decimal(produto.valor) %>
 ```
 **Observação:**
-<br>É só acessar a documentação para verificar outras formatações.
+> É só acessar a documentação para verificar outras formatações.
 
 **Referência:**
 <br>[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency)
