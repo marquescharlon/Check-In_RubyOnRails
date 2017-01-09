@@ -4,7 +4,7 @@
 
 ### Assista o vídeo mostrando como funciona:
 
-[![CHECK-IN DE MESA](https://github.com/marquescharlon/check-in_ruby_tcc/tree/master/public/images/check-in_youtube.JPG)](https://www.youtube.com/watch?v=yJKiZyIY3YE)
+[![CHECK-IN DE MESA](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/images/check-in_youtube.JPG)](https://www.youtube.com/watch?v=yJKiZyIY3YE)
 
 ### Detalhes
 
