@@ -281,7 +281,7 @@ uniqueness: { case_sensitive: false },
 length: { minimum: 8, maximum: 20}
 ```
 **Observação:**
-> Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
+> Irá encontrar mais validações para o model na documentação do próprio RubyOnRails.
 
 **Referências:**
 <br>[http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
