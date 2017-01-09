@@ -10,7 +10,7 @@
 **Orientador:** Thiago Medeiros<br>
 **Instituição:** Faculdade Única de Ipatinga<br>
 
-Caso lhe seja útil, estou disponibilizando também o trabalho final de meu TCC.<br>
+> Caso lhe seja útil, estou disponibilizando para consulta o trabalho final de meu TCC.<br>
 Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/docs/TCC_CHECK-IN_MARQUESCHARLON.pdf).
 
 ### Assista o vídeo mostrando como funciona:
@@ -41,7 +41,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 3. Instalação do Rails e Bundle
 4. Executar o sistema
 
-> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leia a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/). Embora seja paga, recomendo pois é a melhor que até hoje encontrei [Rails Crash Course](https://www.nostarch.com/railscrashcourse).
+> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leiam a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/). Embora seja paga, recomendo pois é a melhor que até hoje encontrei [Rails Crash Course](https://www.nostarch.com/railscrashcourse).
 
 # 1. Instalação "MySQL, Ruby e DevKit"
 
@@ -202,9 +202,9 @@ Para adicionar o breadcrumb é necessário instalar a gem:
 
 - gem "breadcrumbs_on_rails"
 - bundle install
-- Adicionar no "app/controllers/application_controller.rb":
+- Adicionar no "app/controllers/application_controller.rb" o comando abaixo, para definir o caminho para a página principal em todas as páginas.
 ```tex
-add_breadcrumb "Página principal", :root_path, :options => { :title => "Página principal" }, para definir o caminho para a página principal em todas as páginas.
+add_breadcrumb "Página principal", :root_path, :options => { :title => "Página principal" } 
 ```
 - Adicionar no index de cada controller (ProdutosController) o comando:
 ```tex
@@ -216,10 +216,10 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
   <%= render_breadcrumbs :tag => :li, :separator => "" %>
 </ol>
 ```
-**Observação:**
-<br><p align="justify">Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
+<p align="justify">**Observação:**
+<br>Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
 
-Para o breadcrumb aparecer nas páginas show, new e edit foi preciso adicionar os seguintes comandos em cada um deles:
+Para o breadcrumb aparecer nas páginas **show**, **new** e **edit** foi preciso adicionar os seguintes comandos em cada um deles:
 ```tex
 # GET /produtos/1
 # GET /produtos/1.json
@@ -482,7 +482,7 @@ Fazer o mesmo para os demais arquivos.
 - rake db:migrate
 
 - Basta acessar o caminho [http://localhost:3000/users/sign_up](http://localhost:3000/users/sign_up) e realizar o teste criando um usuário.
-- Para adicionar notificações basta abrir o arquivo ```app/views/layouts/application.html.erb``` e adicionar o conteúdo abaixo logo depois da barra de menus <ul class="nav">:
+- Para adicionar notificações basta abrir o arquivo ```app/views/layouts/application.html.erb``` e adicionar o conteúdo abaixo logo depois da barra de menus ```<ul class="nav">```:
 ```tex
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
@@ -494,7 +494,8 @@ Fazer o mesmo para os demais arquivos.
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 ```
-- Acessar o arquivo ```app/controllers/application_controller.rb``` e adicionar o código abaixo, não esquecer que deve ser logo após o comando "protect_from_forgery with: :exception":
+- Acessar o arquivo ```app/controllers/application_controller.rb``` e adicionar o código abaixo, não esquecer que deve ser logo após o comando ```protect_from_forgery with: :exception```:
+
 ```tex
 before_action :authenticate_user!
 ```
