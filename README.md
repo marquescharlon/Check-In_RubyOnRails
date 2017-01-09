@@ -109,7 +109,7 @@ config.navigation_static_links = {
  ```
 
 **Referências:**
-[https://github.com/sferik/rails_admin/wiki](https://github.com/sferik/rails_admin/wiki)
+[https://github.com/sferik/rails_admin/wiki](https://github.com/sferik/rails_admin/wiki)<br>
 [https://github.com/sferik/rails_admin/wiki/Navigation](https://github.com/sferik/rails_admin/wiki/Navigation)
 
 ### 2. Instalando gem 'will_paginate'
@@ -146,9 +146,9 @@ end
 ```
 
 **Referência:**
-[https://github.com/bootstrap-ruby/will_paginate-bootstrap](https://github.com/bootstrap-ruby/will_paginate-bootstrap)
-[https://github.com/sferik/rails_admin/issues/1420](https://github.com/sferik/rails_admin/issues/1420)
-[https://github.com/sferik/rails_admin/wiki/Troubleshoot](https://github.com/sferik/rails_admin/wiki/Troubleshoot)
+<p>[https://github.com/bootstrap-ruby/will_paginate-bootstrap](https://github.com/bootstrap-ruby/will_paginate-bootstrap)</p>
+<p>[https://github.com/sferik/rails_admin/issues/1420](https://github.com/sferik/rails_admin/issues/1420)</p>
+<p>[https://github.com/sferik/rails_admin/wiki/Troubleshoot](https://github.com/sferik/rails_admin/wiki/Troubleshoot)</p>
 
 ### 3. Configurar o botão Pesquisar/Buscar produto:
 	
