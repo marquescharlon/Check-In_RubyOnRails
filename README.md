@@ -2,6 +2,17 @@
 
 É um sistema cujo objetivo é ganhar tempo ao realizar uma reserva de uma mesa em um estabelecimento. Além de servir como apoio para aqueles que estiverem começando aprender a programar em Ruby. Todas as dificuldades, erros e soluções foram documentadas no próprio sistema, com isso, podendo servir como base de conhecimento. No entanto, logo abaixo você irá encontrar uma lista de erros que ocorreram durante o desenvolvimento e suas soluções.
 
+### Trabalho de Conclusão de Curso:
+
+**Tema:** Desenvolvimento de Sistema para realização de reserva de uma mesa em estabelecimentos e check-in, com base na metodologia ágil.<br>
+**Aluno:** Marquescharlon Santos<br>
+**Curso:** Bacharel em Sistemas de Informação<br>
+**Orientador:** Thiago Medeiros<br>
+**Instituição:** Faculdade Única de Ipatinga<br>
+
+Caso lhe seja útil, estou disponibilizando também o trabalho final de meu TCC.<br>
+Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/docs/TCC_CHECK-IN_MARQUESCHARLON.pdf).
+
 ### Assista o vídeo mostrando como funciona:
 
 [![CHECK-IN DE MESA](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/images/check-in_youtube.JPG)](https://www.youtube.com/watch?v=yJKiZyIY3YE)
