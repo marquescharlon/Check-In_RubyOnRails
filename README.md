@@ -82,7 +82,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 
 ### 1. Botão Excluir/Delete não funciona
 
-Isso foi logo após gerar o meu primeiro projeto, os botoes **New** e **Edit** funcionavam, porém, o botão **delete** não. A solução foi instalar o [node-v4.4.5-x86](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/node-v4.4.5-x86.msi), após a instalação o meu funcionou. Talvez fosse por falta de alguma biblioteca.
+Isso foi logo após gerar o meu primeiro projeto, os botoes **New** e **Edit** funcionavam, porém, o botão **Delete** não. A solução foi instalar o [node-v4.4.5-x86](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/node-v4.4.5-x86.msi), após a instalação o meu funcionou. Talvez fosse por falta de alguma biblioteca.
 
 **Observação:**
 <br>Tentei outras versões, porém, só essa é que deu certo.
@@ -147,14 +147,14 @@ config.navigation_static_links = {
 - bundle install
 - Na view index de produtos trocar o comando 
 ```tex
-<%= will_paginate @produtos%>```
+<%= will_paginate @produtos%>
+```
 por: 
 ```tex 
 <%= will_paginate @produtos, renderer: BootstrapPagination::Rails %>
 ```
 
 **Erro/Solução:**
-
 <br>O Rails_admin acusou o seguinte ```erro: undefined method per for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
 
 <p align="justify">Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:</p>
@@ -225,8 +225,9 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
   <%= render_breadcrumbs :tag => :li, :separator => "" %>
 </ol>
 ```
+<p align="justify">
 **Observação:**
-<p align="justify">Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
+<br>Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
 
 Para o breadcrumb aparecer nas páginas **show**, **new** e **edit** foi preciso adicionar os seguintes comandos em cada um deles:
 ```tex
@@ -515,7 +516,7 @@ before_action :authenticate_user!
 - Instalar [file-5.03-setup](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/file-5.03-setup.exe);
 - Para realizar a configuração, clique [aqui](https://github.com/thoughtbot/paperclip);
 
-**Erro/Solução**
+**Erro/Solução:**
 <br>Mesmo após ter feito a instalação da forma correta, o sistema não estava querendo enviar o anexo, foi necessário instalar o [node-v4.4.5-x86](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/node-v4.4.5-x86.msi), após a instalação o meu funcionou. Talvez fosse por falta de alguma biblioteca. 
 
 > No meu caso, a instalação do ```node-v4.4.5-x86``` foi feita ainda no início do projeto, pois, o botão ```Delete``` não estava funcionando.
