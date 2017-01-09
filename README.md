@@ -2,13 +2,13 @@
 
 <p align="justify">É um sistema cujo objetivo é ganhar tempo ao realizar uma reserva de uma mesa em um estabelecimento. Além de servir como apoio para aqueles que estiverem começando aprender a programar em Ruby. Todas as dificuldades, erros e soluções foram documentadas no próprio sistema, com isso, podendo servir como base de conhecimento. No entanto, logo abaixo você irá encontrar uma lista de erros que ocorreram durante o desenvolvimento e suas soluções.</p>
 
-### Trabalho de Conclusão de Curso:
+### Trabalho de Conclusão de Curso
 
 **Tema:** Desenvolvimento de Sistema para realização de reserva de uma mesa em estabelecimentos e check-in, com base na metodologia ágil.<br>
 **Aluno:** Marquescharlon Santos<br>
 **Curso:** Bacharel em Sistemas de Informação<br>
 **Orientador:** Thiago Medeiros<br>
-**Instituição:** Faculdade Única de Ipatinga<br>
+**Instituição:** Faculdade Única de Ipatinga / MG<br>
 
 > Caso lhe seja útil, estou disponibilizando para consulta o trabalho final de meu TCC.<br>
 Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/docs/TCC_CHECK-IN_MARQUESCHARLON.pdf).
@@ -41,12 +41,13 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 3. Instalação do Rails e Bundle
 4. Executar o sistema
 
-> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leiam a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/). Embora seja paga, recomendo pois é a melhor que até hoje encontrei [Rails Crash Course](https://www.nostarch.com/railscrashcourse).
+<p align="justify"> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leiam a apostila: [Desenv. Ágil para Web com Ruby on Rails](https://www.caelum.com.br/apostila-ruby-on-rails/). Embora seja paga, recomendo pois é a melhor que até hoje encontrei [Rails Crash Course](https://www.nostarch.com/railscrashcourse).</p>
 
 # 1. Instalação "MySQL, Ruby e DevKit"
 
 - Clique [aqui](https://dev.mysql.com/downloads/mysql/) para baixar o MySQL, faça a instalação.
-- Clique [aqui](https://rubyinstaller.org/downloads/) para baixar o Ruby versão => 2.2.4. Fique atento também quanto a versão do seu Sistema Operacional, se é 32 ou 64 bit.
+- Clique [aqui](https://rubyinstaller.org/downloads/) para baixar o Ruby versão => 2.2.4. 
+<br>Fique atento também quanto a versão do seu Sistema Operacional, se é 32 ou 64 bit.
 - Agora é só aplicar o velho next, next e finish.
 
 # 2. Configuração do DevKit
@@ -56,7 +57,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 - Abrir o Prompt(Modo Administrador) e acessar o diretório do DevKit (C:/Devkit/);
 - Executar o comando: ```ruby dk.rb init```;
 - Verificar se no arquivo ```config.yml``` (C:/Devkit/) possui o conteúdo ```C:/Ruby22-x64```;
-- Executar o comando: "ruby dk.rb install";
+- Executar o comando: ```ruby dk.rb install```;
 
 **Testar se o JSON está funcionando**
 
@@ -79,12 +80,19 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 
 # Erros, dificuldades e soluções
 
-### 1. config/initializers/rails_admin.rb
+### 1. Botão Excluir/Delete não funciona
+
+Isso foi logo após gerar o meu primeiro projeto, os botoes **New** e **Edit** funcionavam, porém, o botão **delete** não. A solução foi instalar o [node-v4.4.5-x86](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/node-v4.4.5-x86.msi), após a instalação o meu funcionou. Talvez fosse por falta de alguma biblioteca.
+
+**Observação:**
+<br>Tentei outras versões, porém, só essa é que deu certo.
+
+### 2. config/initializers/rails_admin.rb
 	
-- Adicionar um título (label) para o model Produto, que consequentimente é o pai dos models Tipo e Mesa
+- Adicionar um título (label) para o model Produto, que consequentimente é o pai dos models Tipo e Mesa:
  ```tex
 config.model 'Mesa' do
-	navigation_label 'Estabelecimento'
+  navigation_label 'Estabelecimento'
 end
 config.model 'Produto' do
 	navigation_label 'Cardápio Online'
@@ -100,13 +108,13 @@ config.excluded_models = ["Tipo","Mesa"]
 config.included_models = ["Tipo","Mesa"]
 
 # Definir parent entre os models
-Os model Tipo é considerado filho do pai Produto. Excemplo:
+O model Tipo é considerado filho do pai Produto. Excemplo:
 
 Produto
 -> Tipo
 
 config.model 'Tipo' do
- parent Produto
+  parent Produto
 end
 
 # Define o título (label) para os links static
@@ -123,7 +131,7 @@ config.navigation_static_links = {
 <br>[https://github.com/sferik/rails_admin/wiki](https://github.com/sferik/rails_admin/wiki)
 <br>[https://github.com/sferik/rails_admin/wiki/Navigation](https://github.com/sferik/rails_admin/wiki/Navigation)
 
-### 2. Instalando gem 'will_paginate'
+### 3. Instalando gem 'will_paginate'
 
 - gem 'will_paginate', '~> 3.1'
 - bundle install
@@ -146,6 +154,7 @@ por:
 ```
 
 **Erro/Solução:**
+
 <br>O Rails_admin acusou o seguinte ```erro: undefined method per for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
 
 <p align="justify">Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:</p>
@@ -161,7 +170,7 @@ end
 <br>[https://github.com/sferik/rails_admin/issues/1420](https://github.com/sferik/rails_admin/issues/1420)
 <br>[https://github.com/sferik/rails_admin/wiki/Troubleshoot](https://github.com/sferik/rails_admin/wiki/Troubleshoot)
 
-### 3. Configurar o botão Pesquisar/Buscar produto
+### 4. Configurar o botão Pesquisar/Buscar produto
 	
 Foi necessário criar um método dentro do model produtos:
 
@@ -196,7 +205,7 @@ Por último, foi necessário criar a ação para o formulário de busca localiza
 **Observação:**
 <br>O comando ```.where(:publicado => true)``` é para trazer apenas produtos que estejam marcados como publicado pelo administrador.
 
-### 4. Breadcrumb para rails
+### 5. Breadcrumb para rails
 
 Para adicionar o breadcrumb é necessário instalar a gem:
 
@@ -252,7 +261,7 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
 **Referência:**
 <br>[https://github.com/weppos/breadcrumbs_on_rails](https://github.com/weppos/breadcrumbs_on_rails)
 
-### 5. Validando Model Mesa
+### 6. Validando Model Mesa
 ```tex
 validates :codigo, :presence => true, 
 exclusion: { in: %w(Mesa MESA mesa mesa1 mesa01 mesa0001),
@@ -269,10 +278,9 @@ length: { minimum: 8, maximum: 20}
 <br>[http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
 <br>[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html](http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html)
 
-### 6. Video como background da página principal
+### 7. Video como background da página principal
 
-- Adicionar a estrutura na página principal:
-(app/views/pages/index.html.erb)
+- Adicionar a estrutura na página principal (app/views/pages/index.html.erb):
 ```tex
 <video poster="" id="bgvid" playsinline autoplay muted loop>
 <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
@@ -283,8 +291,7 @@ length: { minimum: 8, maximum: 20}
 <!-- Conteúdo aqui -->
 </div>
 ```
-- Adicionar o estilo no arquivo (.SCSS):
-(app/assets/stylesheets/pages.scss)
+- Adicionar o estilo no arquivo (app/assets/stylesheets/pages.scss):
 ```tex
 video { 
     position: fixed;
@@ -301,10 +308,9 @@ video {
   transition: 1s opacity;
 }
 ```
-### 7. Adicionando Login na página principal
+### 8. Adicionando Login na página principal
 
-Adicionar os códigos abaixo na página principal:
-(app/views/pages/index.html.erb)
+Adicionar os códigos abaixo na página principal (app/views/pages/index.html.erb):
 ```tex
 <div class="container">
         <div class="row">
@@ -358,7 +364,7 @@ Adicionar os códigos abaixo na página principal:
 **Observação:**
 <br>Ainda falta adicionar a GEM e criar as sessões, esse é só um preview. 
 
-### 8. Definir Porta Padrão para rodar o projeto Ruby On Rails
+### 9. Definir Porta Padrão para rodar o projeto Ruby On Rails
 	
 Em ```config/boot.rb```, adicione o seguinte bloco de comando:
 ```tex
@@ -375,7 +381,7 @@ end
 **Observação:**
 <br>Onde está ```(:Port => 3000)```, você pode definir a porta que for preciso.
 
-### 9. Gemfile / gem "font-awesome-rails"
+### 10. Gemfile / gem "font-awesome-rails"
 
 - Adicionar gem "font-awesome-rails";
 - Bundle install
@@ -397,7 +403,7 @@ end
 <br>[http://fontawesome.io/examples/](http://fontawesome.io/examples/)
 <br>[http://fontawesome.io/icons/](http://fontawesome.io/icons/)
 
-### 10. Erro: Rake aborted!
+### 11. Erro: Rake aborted!
 ```tex
 C:\Users\CHARLON\Dropbox\UNICA\TCC\qro>rake db:migrate
 rake aborted!
@@ -413,9 +419,9 @@ C:/Users/CHARLON/Dropbox/UNICA/TCC/qro/Rakefile:4:in `<top (required)>'
 (See full trace by running task with --trace)
 ```
 **Observação:**
-<br>Foi necessário apenas excluir o arquivo ```Gemfile.lock```, logo em seguida executar o ```rake db:migrate```
+<br>Foi necessário apenas excluir o arquivo ```Gemfile.lock```, logo em seguida executar o ```rake db:migrate```.
 
-### 11. Formatar :decimal (R$ 00,00)
+### 12. Formatar :decimal (R$ 00,00)
 
 Para apresentar os valores com esta formatação na view é necessário criar um método no helper. Segue abaixo o método:
 
@@ -435,7 +441,7 @@ end
 **Referência:**
 <br>[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency)
 
-### 12. Error: Server certificate B: certificate verify failed - certificado
+### 13. Error: Server certificate B: certificate verify failed - certificado
 
 Descrição completa do erro:
 ```tex
@@ -454,18 +460,20 @@ Make sure that `gem install rake -v '11.3.0'` succeeds before bundling.
 2. Fazer o download ZIP.
 3. Extrair o conteúdo. Dentro da pasta rubygems-x.y.z execute o comando Ruby setup.rb.
 4. Pronto! Como realizei uma nova instalação foi preciso apenas testar o Devkit e instalar o json e bundler.
-5. Já que possuo o projeto e dentro o arquivo GEMFILE que possui a relação de todas dependências do projeto. Então, necessário apenas acessar o projeto pelo prompt e executar o comando "bundler install".
+5. Já que possuo o projeto e dentro o arquivo GEMFILE, no qual, possui a relação de todas dependências (gems) do projeto. Então, necessário apenas acessar o projeto pelo prompt e executar o comando ```bundler install```.
 
 **Documentaçao DevKit:**
 <br>[https://github.com/oneclick/rubyinstaller/wiki/Development-Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
 
-### 13. Gemfile / gem 'devise'
+### 14. Gemfile / gem 'devise'
 
 - gem 'devise'
 - bundle install
 - rails g devise:install
-- Acessar o arquivo ```config/environments/development.rb``` e definir a porta padrão: ```config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }```
-
+- Acessar o arquivo ```config/environments/development.rb``` e definir a porta padrão: 
+```tex
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+```
 - Acessar o arquivo ```app/views/layouts/application.html.erb``` e adicionar o conteúdo abaixo antes de <%= yield %>:
 ```tex
 <% if notice %>
@@ -500,6 +508,17 @@ before_action :authenticate_user!
 **Referências:**
 <br>[https://github.com/plataformatec/devise](https://github.com/plataformatec/devise)
 <br>[http://guides.railsgirls.com/devise](http://guides.railsgirls.com/devise)
+
+### 15. Gemfile / gem "paperclip"
+
+- Instalar [ImageMagick-6.9.4-8-Q16-HDRI-x64-dll](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/ImageMagick-6.9.4-8-Q16-HDRI-x64-dll.exe);
+- Instalar [file-5.03-setup](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/file-5.03-setup.exe);
+- Para realizar a configuração, clique [aqui](https://github.com/thoughtbot/paperclip);
+
+**Erro/Solução**
+<br>Mesmo após ter feito a instalação da forma correta, o sistema não estava querendo enviar o anexo, foi necessário instalar o [node-v4.4.5-x86](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/node-v4.4.5-x86.msi), após a instalação o meu funcionou. Talvez fosse por falta de alguma biblioteca. 
+
+> No meu caso, a instalação do ```node-v4.4.5-x86``` foi feita ainda no início do projeto, pois, o botão ```Delete``` não estava funcionando.
 
 # CONCLUSÃO
 
