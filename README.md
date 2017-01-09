@@ -1,6 +1,6 @@
 # O que é?
 
-É um sistema cujo objetivo é ganhar tempo ao realizar uma reserva de uma mesa em um estabelecimento. Além de servir como apoio para aqueles que estiverem começando aprender a programar em Ruby. Todas as dificuldades, erros e soluções foram documentadas no próprio sistema, com isso, podendo servir como base de conhecimento. No entanto, logo abaixo você irá encontrar uma lista de erros que ocorreram durante o desenvolvimento e suas soluções.
+<p align="justify">É um sistema cujo objetivo é ganhar tempo ao realizar uma reserva de uma mesa em um estabelecimento. Além de servir como apoio para aqueles que estiverem começando aprender a programar em Ruby. Todas as dificuldades, erros e soluções foram documentadas no próprio sistema, com isso, podendo servir como base de conhecimento. No entanto, logo abaixo você irá encontrar uma lista de erros que ocorreram durante o desenvolvimento e suas soluções.</p>
 
 ### Trabalho de Conclusão de Curso:
 
@@ -146,9 +146,9 @@ por:
 ```
 
 **Error/Solução:**
-O Rails_admin acusou o seguinte ```erro: undefined method `per' for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
+<br>O Rails_admin acusou o seguinte ```erro: undefined method `per' for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
 
-Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:
+<p align="justify">Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:</p>
 
 ```tex
 Kaminari.configure do |config|
@@ -156,12 +156,12 @@ Kaminari.configure do |config|
 end
 ```
 
-**Referência:**
+**Referências:**
 <br>[https://github.com/bootstrap-ruby/will_paginate-bootstrap](https://github.com/bootstrap-ruby/will_paginate-bootstrap)
 <br>[https://github.com/sferik/rails_admin/issues/1420](https://github.com/sferik/rails_admin/issues/1420)
 <br>[https://github.com/sferik/rails_admin/wiki/Troubleshoot](https://github.com/sferik/rails_admin/wiki/Troubleshoot)
 
-### 3. Configurar o botão Pesquisar/Buscar produto:
+### 3. Configurar o botão Pesquisar/Buscar produto
 	
 Foi necessário criar um método dentro do model produtos:
 
@@ -194,9 +194,9 @@ Por último, foi necessário criar a ação para o formulário de busca localiza
 </form>
 ```
 **Observação:**
-O comando ```.where(:publicado => true)``` é para trazer apenas produtos que estejam marcados como publicado pelo administrador.
+<br>O comando ```.where(:publicado => true)``` é para trazer apenas produtos que estejam marcados como publicado pelo administrador.
 
-### 4. Breadcrumb para rails:
+### 4. Breadcrumb para rails
 
 Para adicionar o breadcrumb é necessário instalar a gem:
 
@@ -217,7 +217,7 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
 </ol>
 ```
 **Observação:**
-Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.
+<br><p align="justify">Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.</p>
 
 Para o breadcrumb aparecer nas páginas show, new e edit foi preciso adicionar os seguintes comandos em cada um deles:
 ```tex
@@ -252,7 +252,7 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
 **Referência:**
 <br>[https://github.com/weppos/breadcrumbs_on_rails](https://github.com/weppos/breadcrumbs_on_rails)
 
-### 5. Validando Model Mesa:
+### 5. Validando Model Mesa
 ```tex
 validates :codigo, :presence => true, 
 exclusion: { in: %w(Mesa MESA mesa mesa1 mesa01 mesa0001),
@@ -263,13 +263,13 @@ uniqueness: { case_sensitive: false },
 length: { minimum: 8, maximum: 20}
 ```
 **Observação:**
-Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
+<br>Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
 
 **Referências:**
 <br>[http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
 <br>[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html](http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html)
 
-### 6. Video como background da página principal:
+### 6. Video como background da página principal
 
 - Adicionar a estrutura na página principal:
 (app/views/pages/index.html.erb)
@@ -301,7 +301,7 @@ video {
   transition: 1s opacity;
 }
 ```
-### 7. Adicionando Login na página principal:
+### 7. Adicionando Login na página principal
 
 Adicionar os códigos abaixo na página principal:
 (app/views/pages/index.html.erb)
@@ -356,9 +356,9 @@ Adicionar os códigos abaixo na página principal:
                             </div>
 ```
 **Observação:**
-Ainda falta adicionar a GEM e criar as sessões, esse é só um preview. 
+<br>Ainda falta adicionar a GEM e criar as sessões, esse é só um preview. 
 
-### 8. Definir Porta Padrão para rodar o projeto Ruby On Rails:
+### 8. Definir Porta Padrão para rodar o projeto Ruby On Rails
 	
 Em ```config/boot.rb```, adicione o seguinte bloco de comando:
 ```tex
@@ -373,7 +373,7 @@ module Rails
 end
 ```
 **Observação:**
-Onde está ```(:Port => 3000)```, você pode definir a porta que for preciso.
+<br>Onde está ```(:Port => 3000)```, você pode definir a porta que for preciso.
 
 ### 9. Gemfile / gem "font-awesome-rails"
 
@@ -390,7 +390,7 @@ Onde está ```(:Port => 3000)```, você pode definir a porta que for preciso.
 - Necessário apenas iniciar o servidor (rails s).
 
 **Observação:**
-Para utilizar no index.html.erb necessário apenas adicionar a tag ```<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```<i class="fa fa-bell"></i>```.
+<br>Para utilizar no index.html.erb necessário apenas adicionar a tag ```<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```<i class="fa fa-bell"></i>```.
 
 **Referências:**
 <br>[https://github.com/bokmann/font-awesome-rails](https://github.com/bokmann/font-awesome-rails)
@@ -413,9 +413,9 @@ C:/Users/CHARLON/Dropbox/UNICA/TCC/qro/Rakefile:4:in `<top (required)>'
 (See full trace by running task with --trace)
 ```
 **Observação:**
-Foi necessário apenas excluir o arquivo ```Gemfile.lock```, logo em seguida executar o ```rake db:migrate```
+<br>Foi necessário apenas excluir o arquivo ```Gemfile.lock```, logo em seguida executar o ```rake db:migrate```
 
-### 11. Formatar :decimal (R$ 00,00):
+### 11. Formatar :decimal (R$ 00,00)
 
 Para apresentar os valores com esta formatação na view é necessário criar um método no helper. Segue abaixo o método:
 
@@ -430,9 +430,9 @@ end
 <%= valor_decimal(produto.valor) %>
 ```
 **Observação:**
-É só acessar a documentação para verificar outras formatações.
+<br>É só acessar a documentação para verificar outras formatações.
 
-**Referências:**
+**Referência:**
 <br>[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency)
 
 ### 12. Error: Server certificate B: certificate verify failed - certificado
@@ -446,9 +446,9 @@ An error occurred while installing rake (11.3.0), and Bundler cannot continue.
 Make sure that `gem install rake -v '11.3.0'` succeeds before bundling.
 ```
 
-Isso é devido a atualização realizada pela RubyGems que visa melhorar na comunicação entre seus servidores na hora de baixar as gems, visando principalmente a segurança. Para isso, deixaram a documentação disponível para que possamos realizar todas as correções possíveis. 
+<p align="justify">Isso é devido a atualização realizada pela RubyGems que visa melhorar na comunicação entre seus servidores na hora de baixar as gems, visando principalmente a segurança. Para isso, deixaram a documentação disponível para que possamos realizar todas as correções possíveis.</p> 
 
-Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei várias possibilidades, até mesmo disponibilizado pela própria empresa Ruby, mas só depois de dois dias batalhando, além de ter que reinstalar o windows (por ter corrompido com alguma coisa, é coisa de windows, certo!). 
+<p align="justify">Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei várias possibilidades, até mesmo disponibilizado pela própria empresa Ruby, mas só depois de dois dias batalhando, além de ter que reinstalar o windows (por ter corrompido com alguma coisa, é coisa de windows, certo!).</p> 
 
 - Visite o endereço: [https://rubygems.org/pages/download#formats](https://rubygems.org/pages/download#formats)
 - Fazer o download ZIP.
@@ -504,4 +504,4 @@ before_action :authenticate_user!
 
 # CONCLUSÃO
 
-Conclui-se que, este projeto atende uma das necessidades encontradas em um estabelecimento, que é a reserva de uma mesa. Em alguns casos submetendo o cliente a uma fila absurda e obrigando-o a esperar sem nenhum conforto até que alguma mesa esteja desocupada. Para o desenvolvimento deste sistema foi necessário enfrentar diversos desafios, entre eles está a própria linguagem de programação utilizada (Ruby), ainda sendo nova no mercado e pouca discutida em ambientes acadêmicos. Outros métodos que estão adquirindo espaço no mercado aos poucos são os métodos ágeis, utilizados neste trabalho para proporcionar o desenvolvimento em um tempo hábil. O sistema apresentado neste trabalho oferece a possibilidade de realizar a reserva da mesa online. Há a necessidade apenas de realizar o check-in na entrada do estabelecimento, pois, um pré-cadastro já foi realizado pelo próprio cliente. Assim como é feita a reserva de uma passagem aérea, tal qual, é realizada online e tendo em vista seu check-in antes do embarque, também será a reserva e o check-in da mesa. Isso proporciona não só conforto, mas a segurança de que ao chegar no estabelecimento será atendido sem a necessidade de enfrentar filas, pois, o seu cadastro já foi feito e a mesa já está reservada.
+<p align="justify">Conclui-se que, este projeto atende uma das necessidades encontradas em um estabelecimento, que é a reserva de uma mesa. Em alguns casos submetendo o cliente a uma fila absurda e obrigando-o a esperar sem nenhum conforto até que alguma mesa esteja desocupada. Para o desenvolvimento deste sistema foi necessário enfrentar diversos desafios, entre eles está a própria linguagem de programação utilizada (Ruby), ainda sendo nova no mercado e pouca discutida em ambientes acadêmicos. Outros métodos que estão adquirindo espaço no mercado aos poucos são os métodos ágeis, utilizados neste trabalho para proporcionar o desenvolvimento em um tempo hábil. O sistema apresentado neste trabalho oferece a possibilidade de realizar a reserva da mesa online. Há a necessidade apenas de realizar o check-in na entrada do estabelecimento, pois, um pré-cadastro já foi realizado pelo próprio cliente. Assim como é feita a reserva de uma passagem aérea, tal qual, é realizada online e tendo em vista seu check-in antes do embarque, também será a reserva e o check-in da mesa. Isso proporciona não só conforto, mas a segurança de que ao chegar no estabelecimento será atendido sem a necessidade de enfrentar filas, pois, o seu cadastro já foi feito e a mesa já está reservada.<p>
