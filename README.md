@@ -49,9 +49,9 @@
 
 **Testar se o JSON está funcionando**
 
-Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby (C:/Ruby22-x64);
-Executar o comando: "gem install json --platform=ruby", se abrir uma janela pedindo permissão você clicará em "Permitir acesso";
-Executar o comando: "ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"" para confirmar que o Json está funcionando (Fique atento as aspas duplas);
+1. Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby (C:/Ruby22-x64);
+2. Executar o comando: "gem install json --platform=ruby", se abrir uma janela pedindo permissão você clicará em "Permitir acesso";
+3. Executar o comando: "ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"" para confirmar que o Json está funcionando (Fique atento as aspas duplas);
 
 # 3. Instalação do Rails e Bundle
 
@@ -109,8 +109,8 @@ config.navigation_static_links = {
  ```
 
 **Referências:**
-https://github.com/sferik/rails_admin/wiki
-https://github.com/sferik/rails_admin/wiki/Navigation
+[https://github.com/sferik/rails_admin/wiki]:https://github.com/sferik/rails_admin/wiki
+[https://github.com/sferik/rails_admin/wiki/Navigation]:https://github.com/sferik/rails_admin/wiki/Navigation
 
 ### 2. Instalando gem 'will_paginate'
 
@@ -119,16 +119,16 @@ https://github.com/sferik/rails_admin/wiki/Navigation
 - No controller produtos troca o comando "@produtos = Produto.all" por : "@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')"
 
 **Referência:**
-https://github.com/mislav/will_paginate
+[https://github.com/mislav/will_paginate]:https://github.com/mislav/will_paginate
 
-- Adicionar o comando "<%= will_paginate @produtos%>" na página index da view produtos.
+- Adicionar o comando <%= will_paginate @produtos%> na página index da view produtos.
 
-** PARA USAR AS FORMATAÇÕES DO BOOTSTRAP BASTA APENAS: **
+**PARA USAR AS FORMATAÇÕES DO BOOTSTRAP BASTA APENAS:**
 - gem 'will_paginate-bootstrap'
 - bundle install
-- Na view index de produtos trocar o comando "<%= will_paginate @produtos%>" por: "<%= will_paginate @produtos, renderer: BootstrapPagination::Rails %>"
+- Na view index de produtos trocar o comando <%= will_paginate @produtos%> por: <%= will_paginate @produtos, renderer: BootstrapPagination::Rails %>
 
-** Error/Solução: **
+**Error/Solução:**
 O Rails_admin acusou o seguinte erro: undefined method `per' for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>
 
 Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será "config/initializers/kaminari.rb", dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:
@@ -139,10 +139,10 @@ Kaminari.configure do |config|
 end
 ```
 
-* Referência:
-https://github.com/bootstrap-ruby/will_paginate-bootstrap
-https://github.com/sferik/rails_admin/issues/1420
-https://github.com/sferik/rails_admin/wiki/Troubleshoot
+**Referência:**
+[https://github.com/bootstrap-ruby/will_paginate-bootstrap]:https://github.com/bootstrap-ruby/will_paginate-bootstrap 
+[https://github.com/sferik/rails_admin/issues/1420]:https://github.com/sferik/rails_admin/issues/1420
+[https://github.com/sferik/rails_admin/wiki/Troubleshoot]:https://github.com/sferik/rails_admin/wiki/Troubleshoot
 
 ### 3. Configurar o botão Pesquisar/Buscar produto:
 	
@@ -176,7 +176,7 @@ Por último, foi necessário criar a ação para o formulário de busca localiza
    <% end %>
 </form>
 ```
-** Observação: **
+**Observação:**
 O comando ".where(:publicado => true)" é para trazer apenas produtos que estejam marcados como publicado pelo administrador.
 
 ### 4. Breadcrumb para rails:
@@ -186,20 +186,20 @@ Para adicionar o breadcrumb é necessário instalar a gem:
 - gem "breadcrumbs_on_rails"
 - bundle install
 - Adicionar no "app/controllers/application_controller.rb":
-
+```tex
 add_breadcrumb "Página principal", :root_path, :options => { :title => "Página principal" }, para definir o caminho para a página principal em todas as páginas.
-
+```
 - Adicionar no index de cada controller (ProdutosController) o comando:
-
+```tex
 add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página principal"
-
+```
 - Adicionar no Body da página "app/views/layouts/application.html.erb" o comando:
 ```tex
 <ol class="breadcrumb">
   <%= render_breadcrumbs :tag => :li, :separator => "" %>
 </ol>
 ```
-** Observação: **
+**Observação:**
 Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em "app/controllers/application_controller.rb", porém, quando finalizar a página principal não esqueça de alterar o caminho do path.
 
 Para o breadcrumb aparecer nas páginas show, new e edit foi preciso adicionar os seguintes comandos em cada um deles:
@@ -245,12 +245,12 @@ Porém, fica a seu critério qual código usar considerando que seja seguro." },
 uniqueness: { case_sensitive: false },
 length: { minimum: 8, maximum: 20}
 ```
-** Observação: **
+**Observação:**
 Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
 
-** Referências: **
-http://guides.rubyonrails.org/active_record_validations.html
-http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html
+**Referências:**
+[http://guides.rubyonrails.org/active_record_validations.html]:http://guides.rubyonrails.org/active_record_validations.html
+[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html]:http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html
 
 ### 6. Video como background da página principal:
 
@@ -338,7 +338,7 @@ Adicionar os códigos abaixo na página principal:
                                 </div>
                             </div>
 ```
-** Observação: **
+**Observação:**
 Ainda falta adicionar a GEM e criar as sessões, esse é só um preview. 
 
 ### 8. Definir Porta Padrão para rodar o projeto Ruby On Rails:
@@ -355,8 +355,8 @@ module Rails
   end
 end
 ```
-** Observação: **
-Onde está (:Port => 3000), você pode definir a porta que for preciso.
+**Observação:**
+Onde está ```tex(:Port => 3000)```, você pode definir a porta que for preciso.
 
 ### 9. Gemfile / gem "font-awesome-rails"
 
@@ -372,13 +372,13 @@ Onde está (:Port => 3000), você pode definir a porta que for preciso.
 ```
 - Necessário apenas iniciar o servidor (rails s).
 
-** Observação: **
-Para utilizar no index.html.erb necessário apenas adicionar a tag <i class=" "></i>, e definir sua classe com o nome do icone desejado, por exemplo, <i class="fa fa-bell"></i>.
+**Observação:**
+Para utilizar no index.html.erb necessário apenas adicionar a tag ```tex<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```tex<i class="fa fa-bell"></i>```.
 
-** Referências: **
-https://github.com/bokmann/font-awesome-rails
-http://fontawesome.io/examples/
-http://fontawesome.io/icons/
+**Referências:**
+[https://github.com/bokmann/font-awesome-rails]:https://github.com/bokmann/font-awesome-rails
+[http://fontawesome.io/examples/]:http://fontawesome.io/examples/
+[http://fontawesome.io/icons/]:http://fontawesome.io/icons/
 
 ### 10. Erro: Rake aborted!
 ```tex
@@ -395,10 +395,10 @@ C:/Users/CHARLON/Dropbox/UNICA/TCC/qro/config/application.rb:1:in `<top (require
 C:/Users/CHARLON/Dropbox/UNICA/TCC/qro/Rakefile:4:in `<top (required)>'
 (See full trace by running task with --trace)
 ```
-** Observação: **
+**Observação:**
 Foi necessário apenas excluir o arquivo "Gemfile.lock", logo em seguida executar o "rake db:migrate"
 
-### 11. Formatar :decimal  (R$ 00,00):
+### 11. Formatar :decimal (R$ 00,00):
 
 Para apresentar os valores com esta formatação na view é necessário criar um método no helper. Segue abaixo o método:
 
@@ -412,11 +412,11 @@ end
 ```tex
 <%= valor_decimal(produto.valor) %>
 ```
-** Observação: **
+**Observação:**
 É só acessar a documentação para verificar outras formatações.
 
-** Referências: **
-http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency
+**Referências:**
+[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency]:http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency
 
 ### 12. Error: Server certificate B: certificate verify failed - certificado
 
@@ -440,7 +440,7 @@ Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei 
 - Já que possuo o projeto e dentro o arquivo GEMFILE que possui a relação de todas dependências do projeto. Então, necessário apenas acessar o projeto pelo prompt e executar o comando "bundler install".
 
 ** Documentaçao DevKit: **
-https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
+[https://github.com/oneclick/rubyinstaller/wiki/Development-Kit]:https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
 
 ### 13. Gemfile / gem 'devise'
 
@@ -481,9 +481,9 @@ Fazer o mesmo para os demais arquivos.
 ```tex
 before_action :authenticate_user!
 ```
-** Referências: **
-https://github.com/plataformatec/devise
-http://guides.railsgirls.com/devise
+**Referências:**
+[https://github.com/plataformatec/devise]:https://github.com/plataformatec/devise
+[http://guides.railsgirls.com/devise]:http://guides.railsgirls.com/devise
 
 # CONCLUSÃO
 
