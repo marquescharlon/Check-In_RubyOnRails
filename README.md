@@ -30,7 +30,7 @@
 3. Instalação do Rails e Bundle
 4. Executar o sistema
 
-> Caso seja sua primeira vez com o Ruby On Rails, por favor, leia a apostila: https://www.caelum.com.br/apostila-ruby-on-rails/ ou comprar a apostila https://www.nostarch.com/railscrashcourse.
+> Para aqueles que ainda estão começando a desenvolver seu primeiro sistema utilizando o Ruby e seu framework RubyOnRails, por favor, leia a apostila: https://www.caelum.com.br/apostila-ruby-on-rails/. Embora seja paga, recomendo pois é a melhor que até hoje encontrei https://www.nostarch.com/railscrashcourse.
 
 # 1. Instalação "MySQL, Ruby e DevKit"
 
@@ -109,8 +109,8 @@ config.navigation_static_links = {
  ```
 
 **Referências:**
-[https://github.com/sferik/rails_admin/wiki]:https://github.com/sferik/rails_admin/wiki
-[https://github.com/sferik/rails_admin/wiki/Navigation]:https://github.com/sferik/rails_admin/wiki/Navigation
+[https://github.com/sferik/rails_admin/wiki]
+[https://github.com/sferik/rails_admin/wiki/Navigation]
 
 ### 2. Instalando gem 'will_paginate'
 
@@ -119,7 +119,7 @@ config.navigation_static_links = {
 - No controller produtos troca o comando "@produtos = Produto.all" por : "@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')"
 
 **Referência:**
-[https://github.com/mislav/will_paginate]:https://github.com/mislav/will_paginate
+[https://github.com/mislav/will_paginate]
 
 - Adicionar o comando <%= will_paginate @produtos%> na página index da view produtos.
 
@@ -140,9 +140,9 @@ end
 ```
 
 **Referência:**
-[https://github.com/bootstrap-ruby/will_paginate-bootstrap]:https://github.com/bootstrap-ruby/will_paginate-bootstrap 
-[https://github.com/sferik/rails_admin/issues/1420]:https://github.com/sferik/rails_admin/issues/1420
-[https://github.com/sferik/rails_admin/wiki/Troubleshoot]:https://github.com/sferik/rails_admin/wiki/Troubleshoot
+[https://github.com/bootstrap-ruby/will_paginate-bootstrap]
+[https://github.com/sferik/rails_admin/issues/1420]
+[https://github.com/sferik/rails_admin/wiki/Troubleshoot]
 
 ### 3. Configurar o botão Pesquisar/Buscar produto:
 	
@@ -233,7 +233,7 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
 ```
 
 ** Referência: **
-https://github.com/weppos/breadcrumbs_on_rails
+[https://github.com/weppos/breadcrumbs_on_rails]
 
 ### 5. Validando Model Mesa:
 ```tex
@@ -249,8 +249,8 @@ length: { minimum: 8, maximum: 20}
 Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
 
 **Referências:**
-[http://guides.rubyonrails.org/active_record_validations.html]:http://guides.rubyonrails.org/active_record_validations.html
-[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html]:http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html
+[http://guides.rubyonrails.org/active_record_validations.html]
+[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html]
 
 ### 6. Video como background da página principal:
 
@@ -373,7 +373,7 @@ Onde está ```tex(:Port => 3000)```, você pode definir a porta que for preciso.
 - Necessário apenas iniciar o servidor (rails s).
 
 **Observação:**
-Para utilizar no index.html.erb necessário apenas adicionar a tag ```tex<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```tex<i class="fa fa-bell"></i>```.
+Para utilizar no index.html.erb necessário apenas adicionar a tag ```i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, @<i class="fa fa-bell"></i>@.
 
 **Referências:**
 [https://github.com/bokmann/font-awesome-rails]:https://github.com/bokmann/font-awesome-rails
@@ -416,7 +416,7 @@ end
 É só acessar a documentação para verificar outras formatações.
 
 **Referências:**
-[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency]:http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency
+[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency]
 
 ### 12. Error: Server certificate B: certificate verify failed - certificado
 
