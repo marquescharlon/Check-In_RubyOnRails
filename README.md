@@ -8,8 +8,8 @@
 
 ### Detalhes
 
-- Ruby version: ruby 2.2.4p230 (2015-12-16 revision 53155) [x64-mingw32]
-- Sistema Operacional: Windows 7 Ultimate 64bit
+- Ruby version: ```ruby 2.2.4p230 (2015-12-16 revision 53155) [x64-mingw32]```
+- Sistema Operacional: ```Windows 7 Ultimate 64bit```
 
 ### Ferramentas utilizadas
 
@@ -41,29 +41,29 @@
 # 2. Configuração do DevKit
 
 - No mesmo [site](https://rubyinstaller.org/downloads/) baixe o DevKit, cuja versão corresponda ao seu Sistema Operacional.
-- Extrair o DevKit "DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe" para o diretório (C:/Devkit/);
+- Extrair o DevKit ```DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe``` para o diretório ```(C:/Devkit/)```;
 - Abrir o Prompt(Modo Administrador) e acessar o diretório do DevKit (C:/Devkit/);
-- Executar o comando: "ruby dk.rb init";
-- Verificar se no arquivo "config.yml" (C:/Devkit/) possui o conteúdo "C:/Ruby22-x64";
+- Executar o comando: ```ruby dk.rb init```;
+- Verificar se no arquivo ```config.yml``` (C:/Devkit/) possui o conteúdo ```C:/Ruby22-x64```;
 - Executar o comando: "ruby dk.rb install";
 
 **Testar se o JSON está funcionando**
 
-1. Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby (C:/Ruby22-x64);
-2. Executar o comando: "gem install json --platform=ruby", se abrir uma janela pedindo permissão você clicará em "Permitir acesso";
-3. Executar o comando: "ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"" para confirmar que o Json está funcionando (Fique atento as aspas duplas);
+1. Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby ```(C:/Ruby22-x64)```;
+2. Executar o comando: ```gem install json --platform=ruby```, se abrir uma janela pedindo permissão você clicará em "Permitir acesso";
+3. Executar o comando: ```ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"``` para confirmar que o Json está funcionando (Fique atento as aspas duplas);
 
 # 3. Instalação do Rails e Bundle
 
-- Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby (C:/Ruby22-x64);
-- Executar o comando: "gem install rails" e aguarde, demora um pouco mesmo;
-- Depois, execute o comando "bundle install";
+- Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby ```(C:/Ruby22-x64)```;
+- Executar o comando: ```gem install rails``` e aguarde, demora um pouco mesmo;
+- Depois, execute o comando ```bundle install```;
 
 # 4. Executar o sistema
 
-- Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto (C:/PROJETOS/novoContato);
-- Executar o comando: "rails s" e aguardar até o servidor ser iniciado por completo;
-- Abra o navegador e acesse o endereço "http://localhost:3000/";
+- Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto;
+- Executar o comando: ```rails s``` e aguardar até o servidor ser iniciado por completo;
+- Abra o navegador e acesse o endereço [http://localhost:3000/](http://localhost:3000/);
 - Pronto! O sistema deverá rodar.
 
 # Erros, dificuldades e soluções
@@ -109,29 +109,35 @@ config.navigation_static_links = {
  ```
 
 **Referências:**
-[https://github.com/sferik/rails_admin/wiki]
-[https://github.com/sferik/rails_admin/wiki/Navigation]
+[https://github.com/sferik/rails_admin/wiki](https://github.com/sferik/rails_admin/wiki)
+[https://github.com/sferik/rails_admin/wiki/Navigation](https://github.com/sferik/rails_admin/wiki/Navigation)
 
 ### 2. Instalando gem 'will_paginate'
 
 - gem 'will_paginate', '~> 3.1'
 - bundle install
-- No controller produtos troca o comando "@produtos = Produto.all" por : "@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')"
+- No controller produtos troca o comando ```@produtos = Produto.all``` por: ```@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')```
 
 **Referência:**
-[https://github.com/mislav/will_paginate]
+[https://github.com/mislav/will_paginate](https://github.com/mislav/will_paginate)
 
-- Adicionar o comando <%= will_paginate @produtos%> na página index da view produtos.
+- Adicionar o comando ```<%= will_paginate @produtos%>``` na página index da view produtos.
 
 **PARA USAR AS FORMATAÇÕES DO BOOTSTRAP BASTA APENAS:**
 - gem 'will_paginate-bootstrap'
 - bundle install
-- Na view index de produtos trocar o comando <%= will_paginate @produtos%> por: <%= will_paginate @produtos, renderer: BootstrapPagination::Rails %>
+- Na view index de produtos trocar o comando 
+```tex
+<%= will_paginate @produtos%>```
+por: 
+```tex 
+<%= will_paginate @produtos, renderer: BootstrapPagination::Rails %>
+```
 
 **Error/Solução:**
-O Rails_admin acusou o seguinte erro: undefined method `per' for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>
+O Rails_admin acusou o seguinte ```erro: undefined method `per' for #<Produto::ActiveRecord_Relation:0x0000000cec26e0>```
 
-Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será "config/initializers/kaminari.rb", dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:
+Conflito ao utilizar o will_pagination. Para solucionar este problema foi necessário apenas adicionar um novo arquivo cujo caminho e o nome será ```config/initializers/kaminari.rb```, dentro deste arquivo adicione o seguinte bloco de comandos para definirmos um novo caminho:
 
 ```tex
 Kaminari.configure do |config|
@@ -140,9 +146,9 @@ end
 ```
 
 **Referência:**
-[https://github.com/bootstrap-ruby/will_paginate-bootstrap]
-[https://github.com/sferik/rails_admin/issues/1420]
-[https://github.com/sferik/rails_admin/wiki/Troubleshoot]
+[https://github.com/bootstrap-ruby/will_paginate-bootstrap](https://github.com/bootstrap-ruby/will_paginate-bootstrap)
+[https://github.com/sferik/rails_admin/issues/1420](https://github.com/sferik/rails_admin/issues/1420)
+[https://github.com/sferik/rails_admin/wiki/Troubleshoot](https://github.com/sferik/rails_admin/wiki/Troubleshoot)
 
 ### 3. Configurar o botão Pesquisar/Buscar produto:
 	
@@ -159,13 +165,13 @@ def self.search(search, page)
 ```
 Depois, no controller "ProdutosController" foi necessário trocar o comando:
 ```tex
-"@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')"
+@produtos = Produto.where(:publicado => true).paginate(:page => params[:page], :per_page => 3).order('updated_at DESC')
 ```
 por:
 ```tex
-"@produtos = Produto.search(params[:search], params[:page])".
+@produtos = Produto.search(params[:search], params[:page]).
 ```
-Por último, foi necessário criar a ação para o formulário de busca localizado em "app/views/layouts/application.html.erb". Deixando o formulário como o exemplo abaixo:
+Por último, foi necessário criar a ação para o formulário de busca localizado em ```app/views/layouts/application.html.erb```. Deixando o formulário como o exemplo abaixo:
 ```tex
 <form class="navbar-form navbar-left">
    <div class="form-group">
@@ -177,7 +183,7 @@ Por último, foi necessário criar a ação para o formulário de busca localiza
 </form>
 ```
 **Observação:**
-O comando ".where(:publicado => true)" é para trazer apenas produtos que estejam marcados como publicado pelo administrador.
+O comando ```.where(:publicado => true)``` é para trazer apenas produtos que estejam marcados como publicado pelo administrador.
 
 ### 4. Breadcrumb para rails:
 
@@ -200,7 +206,7 @@ add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página princi
 </ol>
 ```
 **Observação:**
-Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em "app/controllers/application_controller.rb", porém, quando finalizar a página principal não esqueça de alterar o caminho do path.
+Como não preparei ainda minha página principal eu deixei o caminho para produtos_path em ```app/controllers/application_controller.rb```, porém, quando finalizar a página principal não esqueça de alterar o caminho do path.
 
 Para o breadcrumb aparecer nas páginas show, new e edit foi preciso adicionar os seguintes comandos em cada um deles:
 ```tex
@@ -227,13 +233,13 @@ add_breadcrumb "Editando " + @produtos.nome
 end
 ```
 
-E em index continuo os mesmos comandos:
+E em index continuou os mesmos comandos:
 ```tex
 add_breadcrumb "Produto", produtos_path, :title => "Voltar para a Página principal"
 ```
 
-** Referência: **
-[https://github.com/weppos/breadcrumbs_on_rails]
+**Referência:**
+[https://github.com/weppos/breadcrumbs_on_rails](https://github.com/weppos/breadcrumbs_on_rails)
 
 ### 5. Validando Model Mesa:
 ```tex
@@ -249,8 +255,8 @@ length: { minimum: 8, maximum: 20}
 Irá encontrar mais validações para o model na documentação do próprio Ruby On Rails, links na descrição.
 
 **Referências:**
-[http://guides.rubyonrails.org/active_record_validations.html]
-[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html]
+[http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
+[http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html](http://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html)
 
 ### 6. Video como background da página principal:
 
@@ -343,7 +349,7 @@ Ainda falta adicionar a GEM e criar as sessões, esse é só um preview.
 
 ### 8. Definir Porta Padrão para rodar o projeto Ruby On Rails:
 	
-Em config/boot.rb, adicione o seguinte bloco de comando:
+Em ```config/boot.rb```, adicione o seguinte bloco de comando:
 ```tex
 require 'rails/commands/server'
 module Rails
@@ -356,7 +362,7 @@ module Rails
 end
 ```
 **Observação:**
-Onde está ```tex(:Port => 3000)```, você pode definir a porta que for preciso.
+Onde está ```(:Port => 3000)```, você pode definir a porta que for preciso.
 
 ### 9. Gemfile / gem "font-awesome-rails"
 
@@ -373,12 +379,12 @@ Onde está ```tex(:Port => 3000)```, você pode definir a porta que for preciso.
 - Necessário apenas iniciar o servidor (rails s).
 
 **Observação:**
-Para utilizar no index.html.erb necessário apenas adicionar a tag ```i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, @<i class="fa fa-bell"></i>@.
+Para utilizar no index.html.erb necessário apenas adicionar a tag ```<i class=" "></i>```, e definir sua classe com o nome do icone desejado, por exemplo, ```<i class="fa fa-bell"></i>```.
 
 **Referências:**
-[https://github.com/bokmann/font-awesome-rails]:https://github.com/bokmann/font-awesome-rails
-[http://fontawesome.io/examples/]:http://fontawesome.io/examples/
-[http://fontawesome.io/icons/]:http://fontawesome.io/icons/
+[https://github.com/bokmann/font-awesome-rails](https://github.com/bokmann/font-awesome-rails)
+[http://fontawesome.io/examples/](http://fontawesome.io/examples/)
+[http://fontawesome.io/icons/](http://fontawesome.io/icons/)
 
 ### 10. Erro: Rake aborted!
 ```tex
@@ -396,7 +402,7 @@ C:/Users/CHARLON/Dropbox/UNICA/TCC/qro/Rakefile:4:in `<top (required)>'
 (See full trace by running task with --trace)
 ```
 **Observação:**
-Foi necessário apenas excluir o arquivo "Gemfile.lock", logo em seguida executar o "rake db:migrate"
+Foi necessário apenas excluir o arquivo ```Gemfile.lock```, logo em seguida executar o ```rake db:migrate```
 
 ### 11. Formatar :decimal (R$ 00,00):
 
@@ -416,7 +422,7 @@ end
 É só acessar a documentação para verificar outras formatações.
 
 **Referências:**
-[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency]
+[http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency)
 
 ### 12. Error: Server certificate B: certificate verify failed - certificado
 
@@ -433,23 +439,23 @@ Isso é devido a atualização realizada pela RubyGems que visa melhorar na comu
 
 Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei várias possibilidades, até mesmo disponibilizado pela própria empresa Ruby, mas só depois de dois dias batalhando, além de ter que reinstalar o windows (por ter corrompido com alguma coisa, é coisa de windows, certo!). 
 
-- Visite o endereço: https://rubygems.org/pages/download#formats
+- Visite o endereço: [https://rubygems.org/pages/download#formats](https://rubygems.org/pages/download#formats)
 - Fazer o download ZIP.
 - Extrair o conteúdo. Dentro da pasta rubygems-x.y.z execute o comando Ruby setup.rb.
 - Pronto! Como realizei uma nova instalação foi preciso apenas testar o Devkit e instalar o json e bundler.
 - Já que possuo o projeto e dentro o arquivo GEMFILE que possui a relação de todas dependências do projeto. Então, necessário apenas acessar o projeto pelo prompt e executar o comando "bundler install".
 
-** Documentaçao DevKit: **
-[https://github.com/oneclick/rubyinstaller/wiki/Development-Kit]:https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
+**Documentaçao DevKit:**
+[https://github.com/oneclick/rubyinstaller/wiki/Development-Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
 
 ### 13. Gemfile / gem 'devise'
 
 - gem 'devise'
 - bundle install
 - rails g devise:install
-- Acessar o arquivo "config/environments/development.rb" e definir a porta padrão: config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+- Acessar o arquivo ```config/environments/development.rb``` e definir a porta padrão: ```config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }```
 
-- Acessar o arquivo "app/views/layouts/application.html.erb" e adicionar o conteúdo abaixo antes de <%= yield %>:
+- Acessar o arquivo ```app/views/layouts/application.html.erb``` e adicionar o conteúdo abaixo antes de <%= yield %>:
 ```tex
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -458,14 +464,14 @@ Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei 
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 ```
-- Acessar o arquivo "app/views/ideas/show.html.erb" e remover a linha "<p id="notice"><%= notice %></p>".
+- Acessar o arquivo ```app/views/ideas/show.html.erb``` e remover a linha ```<p id="notice"><%= notice %></p>```.
 Fazer o mesmo para os demais arquivos.
 
 - Gerar o model User: rails g devise user
 - rake db:migrate
 
-- Basta acessar o caminho "http://localhost:3000/users/sign_up" e realizar o teste criando um usuário.
-- Para adicionar notificações basta abrir o arquivo "app/views/layouts/application.html.erb" e adicionar o conteúdo abaixo lodo depois da barra de menus <ul class="nav">:
+- Basta acessar o caminho [http://localhost:3000/users/sign_up](http://localhost:3000/users/sign_up) e realizar o teste criando um usuário.
+- Para adicionar notificações basta abrir o arquivo ```app/views/layouts/application.html.erb``` e adicionar o conteúdo abaixo logo depois da barra de menus <ul class="nav">:
 ```tex
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
@@ -477,13 +483,13 @@ Fazer o mesmo para os demais arquivos.
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 ```
-- Acessar o arquivo "app/controllers/application_controller.rb" e adicionar o código abaixo, não esquecer que deve ser logo após o comando "protect_from_forgery with: :exception":
+- Acessar o arquivo ```app/controllers/application_controller.rb``` e adicionar o código abaixo, não esquecer que deve ser logo após o comando "protect_from_forgery with: :exception":
 ```tex
 before_action :authenticate_user!
 ```
 **Referências:**
-[https://github.com/plataformatec/devise]:https://github.com/plataformatec/devise
-[http://guides.railsgirls.com/devise]:http://guides.railsgirls.com/devise
+[https://github.com/plataformatec/devise](https://github.com/plataformatec/devise)
+[http://guides.railsgirls.com/devise](http://guides.railsgirls.com/devise)
 
 # CONCLUSÃO
 
