@@ -53,7 +53,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 ### Caso queira restaurar o backup
 
 - Clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/qro_backup 20170107 2254.rar) para baixar o backup do banco de dados que foi construído ao longo do desenvolvimento, nele constará a base de conhecimento. Faça o download deste arquivo e descompacta-o.
-- Clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/mysql-gui-tools-5.0-r16-win32.msi) para baixar o MySQL GUI Tools. A partir dele você restaurará o backup.
+- Clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/mysql-gui-tools-5.0-r16-win32.msi) para baixar o MySQL GUI Tools, a partir dele você restaurará o backup.
 
 > Você encontrará mais informações para acesso ao banco em ```config/database.yml``` no projeto. 
 
@@ -470,12 +470,12 @@ Make sure that `gem install rake -v '11.3.0'` succeeds before bundling.
 
 <p align="justify">Isso é devido a atualização realizada pela RubyGems que visa melhorar na comunicação entre seus servidores na hora de baixar as gems, visando principalmente a segurança. Para isso, deixaram a documentação disponível para que possamos realizar todas as correções possíveis.</p> 
 
-<p align="justify">Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei várias possibilidades, até mesmo disponibilizado pela própria empresa Ruby, mas só depois de dois dias batalhando, além de ter que reinstalar o windows (por ter corrompido com alguma coisa, é coisa de windows, certo!).</p> 
+<p align="justify">Infelizmente, demorei achar a solução devido estar aprendendo sozinho, testei várias possibilidades, até mesmo disponibilizado pela própria empresa Ruby, mas só depois de dois dias batalhando, além de ter que reinstalar o windows (por ter corrompido algum arquivo importante do windows em minhas tentativas).</p> 
 
 1. Visite o endereço: [https://rubygems.org/pages/download#formats](https://rubygems.org/pages/download#formats)
 2. Fazer o download ZIP.
-3. Extrair o conteúdo. Dentro da pasta rubygems-x.y.z execute o comando Ruby setup.rb.
-4. Pronto! Como realizei uma nova instalação foi preciso apenas testar o Devkit e instalar o json e bundler.
+3. Extrair o conteúdo. Dentro da pasta rubygems-x.y.z execute o comando Ruby ```setup.rb```.
+4. Pronto! Como realizei uma nova instalação foi preciso apenas testar o Devkit e instalar o **json** e **bundler**.
 5. Já que possuo o projeto e dentro o arquivo GEMFILE, no qual, possui a relação de todas dependências (gems) do projeto. Então, necessário apenas acessar o projeto pelo prompt e executar o comando ```bundler install```.
 
 **Documentaçao DevKit:**
