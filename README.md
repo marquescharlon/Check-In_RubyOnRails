@@ -50,6 +50,13 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 <br>Fique atento também quanto a versão do seu Sistema Operacional, se é 32 ou 64 bit.
 - Agora é só aplicar o velho next, next e finish.
 
+### Caso queira restaurar o backup
+
+- Clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/qro_backup 20170107 2254.sql) para baixar o backup utilizado no desenvolvimento. Nele constará a base de conhecimento.
+- Clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/mysql-gui-tools-5.0-r16-win32.msi) para baixar o MySQL GUI Tools. A partir dele você restaurará o backup.
+
+> Você encontrará mais informações para acesso ao banco em ```config/database.yml``` no projeto. 
+
 # 2. Configuração do DevKit
 
 - No mesmo [site](https://rubyinstaller.org/downloads/) baixe o DevKit, cuja versão corresponda ao seu Sistema Operacional.
