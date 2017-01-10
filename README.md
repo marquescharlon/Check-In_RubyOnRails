@@ -52,7 +52,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 
 ### Caso queira restaurar o backup
 
-- Clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/qro_backup 20170107 2254.sql) para baixar o backup utilizado no desenvolvimento. Nele constará a base de conhecimento.
+- Clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/qro_backup 20170107 2254.rar) para baixar o backup do banco de dados que foi construído ao longo do desenvolvimento, nele constará a base de conhecimento. Faça o download deste arquivo e descompacta-o.
 - Clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/mysql-gui-tools-5.0-r16-win32.msi) para baixar o MySQL GUI Tools. A partir dele você restaurará o backup.
 
 > Você encontrará mais informações para acesso ao banco em ```config/database.yml``` no projeto. 
