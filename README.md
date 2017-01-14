@@ -70,7 +70,7 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 
 1. Abrir o Prompt(Modo Administrador) e acessar o diretório do Ruby ```(C:/Ruby22-x64)```;
 2. Executar o comando: ```gem install json --platform=ruby```, se abrir uma janela pedindo permissão você clicará em "Permitir acesso";
-3. Executar o comando: ```ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"``` para confirmar que o Json está funcionando;
+3. Executar o comando: ```ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"``` para confirmar que o Json está funcionando.
 
 # 3. Instalação do Rails e Bundle
 
@@ -84,6 +84,17 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 - Executar o comando: ```rails s``` e aguardar até o servidor ser iniciado por completo;
 - Abra o navegador e acesse o endereço [http://localhost:3000/](http://localhost:3000/);
 - Pronto! O sistema ```Qro Check-in de Mesa``` será carregado.
+
+> Segue abaixo algumas instruções, caso queira executá-lo no ambiente de test.
+
+### Ambiente de Test
+
+1. Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto;
+2. Executar o comando ```bundle exec rake db:migrate RAILS_ENV=test```;
+
+> Caso não tenha em seu banco de dados o database ```qro_test```, então, execute o seguinte comando ```bundle exec rake db:create db:migrate RAILS=test```.
+
+3. Ao invés de digitar ```rails s```, digite: ```rails s -e test```.
 
 # Erros, dificuldades e soluções
 
