@@ -2,3 +2,490 @@ I, [2016-10-26T02:26:19.562912 #7628]  INFO -- : BreadcrumbsOnRails detected it 
 I, [2016-10-26T02:40:01.701409 #6376]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
 I, [2016-10-26T02:44:09.982609 #7788]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
 I, [2016-10-27T16:01:38.300595 #6348]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
+I, [2017-01-14T22:09:52.561315 #7928]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
+I, [2017-01-14T22:12:47.292309 #6816]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
+D, [2017-01-14T22:12:48.488377 #6816] DEBUG -- :   [1m[36m (26.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+D, [2017-01-14T22:12:48.521379 #6816] DEBUG -- :   [1m[35m (28.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+D, [2017-01-14T22:12:48.524379 #6816] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+I, [2017-01-14T22:12:48.536380 #6816]  INFO -- : Migrating to CreateTipos (20160911032018)
+D, [2017-01-14T22:12:48.558381 #6816] DEBUG -- :   [1m[35m (14.0ms)[0m  CREATE TABLE `tipos` (`id` int(11) auto_increment PRIMARY KEY, `nome` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2017-01-14T22:12:48.561382 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:48.575382 #6816] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160911032018')
+D, [2017-01-14T22:12:48.576382 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:48.576382 #6816]  INFO -- : Migrating to CreateMesas (20160911060828)
+D, [2017-01-14T22:12:48.598384 #6816] DEBUG -- :   [1m[35m (15.0ms)[0m  CREATE TABLE `mesas` (`id` int(11) auto_increment PRIMARY KEY, `cadeiras` int(11), `codigo` varchar(255), `observacao` text, `reservada` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2017-01-14T22:12:48.599384 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:48.601384 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160911060828')
+D, [2017-01-14T22:12:48.602384 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:48.602384 #6816]  INFO -- : Migrating to CreateProdutos (20160911061514)
+D, [2017-01-14T22:12:48.625385 #6816] DEBUG -- :   [1m[35m (15.0ms)[0m  CREATE TABLE `produtos` (`id` int(11) auto_increment PRIMARY KEY, `imagem` varchar(255), `nome` varchar(255), `descricao` text, `tipo_id` int(11), `valor` decimal, `cupom` varchar(255), `publicado` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_produtos_on_tipo_id`  (`tipo_id`) ) ENGINE=InnoDB
+D, [2017-01-14T22:12:48.664387 #6816] DEBUG -- :   [1m[36m (38.0ms)[0m  [1mALTER TABLE `produtos` ADD CONSTRAINT `fk_rails_4d8c8cd8a9`
+FOREIGN KEY (`tipo_id`)
+  REFERENCES `tipos` (`id`)
+[0m
+D, [2017-01-14T22:12:48.665388 #6816] DEBUG -- :   [1m[35m (0.0ms)[0m  BEGIN
+D, [2017-01-14T22:12:48.667388 #6816] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160911061514')[0m
+D, [2017-01-14T22:12:48.668388 #6816] DEBUG -- :   [1m[35m (1.0ms)[0m  COMMIT
+I, [2017-01-14T22:12:48.668388 #6816]  INFO -- : Migrating to RemoveImagemProduto (20160912020816)
+D, [2017-01-14T22:12:48.706390 #6816] DEBUG -- :   [1m[36m (32.0ms)[0m  [1mALTER TABLE `produtos` DROP `imagem`[0m
+D, [2017-01-14T22:12:48.707390 #6816] DEBUG -- :   [1m[35m (0.0ms)[0m  BEGIN
+D, [2017-01-14T22:12:48.708390 #6816] DEBUG -- :   [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160912020816')[0m
+D, [2017-01-14T22:12:48.709390 #6816] DEBUG -- :   [1m[35m (1.0ms)[0m  COMMIT
+I, [2017-01-14T22:12:48.709390 #6816]  INFO -- : Migrating to AddAttachmentImagemToProdutos (20160912021402)
+D, [2017-01-14T22:12:48.741392 #6816] DEBUG -- :   [1m[36m (25.0ms)[0m  [1mALTER TABLE `produtos` ADD `imagem_file_name` varchar(255)[0m
+D, [2017-01-14T22:12:48.767393 #6816] DEBUG -- :   [1m[35m (26.0ms)[0m  ALTER TABLE `produtos` ADD `imagem_content_type` varchar(255)
+D, [2017-01-14T22:12:48.794395 #6816] DEBUG -- :   [1m[36m (27.0ms)[0m  [1mALTER TABLE `produtos` ADD `imagem_file_size` int(11)[0m
+D, [2017-01-14T22:12:48.823397 #6816] DEBUG -- :   [1m[35m (29.0ms)[0m  ALTER TABLE `produtos` ADD `imagem_updated_at` datetime
+D, [2017-01-14T22:12:48.825397 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:48.826397 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160912021402')
+D, [2017-01-14T22:12:48.827397 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:48.827397 #6816]  INFO -- : Migrating to CreateRegistros (20160928192439)
+D, [2017-01-14T22:12:48.849398 #6816] DEBUG -- :   [1m[35m (15.0ms)[0m  CREATE TABLE `registros` (`id` int(11) auto_increment PRIMARY KEY, `referencia` varchar(255), `descricao` text, `observacao` text, `concluido` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2017-01-14T22:12:48.851398 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:48.853398 #6816] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160928192439')
+D, [2017-01-14T22:12:48.854398 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:48.854398 #6816]  INFO -- : Migrating to AlterTypeValorProdutos (20161001024825)
+D, [2017-01-14T22:12:48.907401 #6816] DEBUG -- :   [1m[35m (44.0ms)[0m  ALTER TABLE `produtos` CHANGE `valor` `valor` decimal(15,3) DEFAULT NULL
+D, [2017-01-14T22:12:48.909401 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:48.911402 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161001024825')
+D, [2017-01-14T22:12:48.912402 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:48.912402 #6816]  INFO -- : Migrating to AddDefaultValorProdutos (20161001025522)
+D, [2017-01-14T22:12:48.932403 #6816] DEBUG -- :   [1m[35m (8.0ms)[0m  ALTER TABLE `produtos` CHANGE `valor` `valor` decimal(15,3) DEFAULT '0.00'
+D, [2017-01-14T22:12:48.934403 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:48.937403 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161001025522')
+D, [2017-01-14T22:12:48.938403 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:48.938403 #6816]  INFO -- : Migrating to AddDefaultCadeirasMesas (20161001030137)
+D, [2017-01-14T22:12:48.960404 #6816] DEBUG -- :   [1m[35m (9.0ms)[0m  ALTER TABLE `mesas` CHANGE `cadeiras` `cadeiras` int(11) DEFAULT 1
+D, [2017-01-14T22:12:48.962404 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:48.963405 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161001030137')
+D, [2017-01-14T22:12:48.964405 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:48.964405 #6816]  INFO -- : Migrating to AlterDefaultValorProdutos (20161006020827)
+D, [2017-01-14T22:12:49.010407 #6816] DEBUG -- :   [1m[35m (36.0ms)[0m  ALTER TABLE `produtos` CHANGE `valor` `valor` decimal(15,2) DEFAULT '0.000'
+D, [2017-01-14T22:12:49.011407 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.012407 #6816] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161006020827')
+D, [2017-01-14T22:12:49.013407 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.014407 #6816]  INFO -- : Migrating to AlterPrecisionValorProdutos (20161006021529)
+D, [2017-01-14T22:12:49.061410 #6816] DEBUG -- :   [1m[35m (33.0ms)[0m  ALTER TABLE `produtos` CHANGE `valor` `valor` decimal(5,2) DEFAULT '0.00'
+D, [2017-01-14T22:12:49.062410 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.064410 #6816] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161006021529')
+D, [2017-01-14T22:12:49.065410 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.065410 #6816]  INFO -- : Migrating to DeviseCreateUsers (20161024222649)
+D, [2017-01-14T22:12:49.089412 #6816] DEBUG -- :   [1m[35m (16.0ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2017-01-14T22:12:49.108413 #6816] DEBUG -- :   [1m[36m (12.0ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+D, [2017-01-14T22:12:49.122414 #6816] DEBUG -- :   [1m[35m (11.0ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+D, [2017-01-14T22:12:49.124414 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.125414 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161024222649')
+D, [2017-01-14T22:12:49.127414 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.127414 #6816]  INFO -- : Migrating to AddColumnMesaIdToUsers (20161025181811)
+D, [2017-01-14T22:12:49.168416 #6816] DEBUG -- :   [1m[35m (33.0ms)[0m  ALTER TABLE `users` ADD `mesa_id` int(11)
+D, [2017-01-14T22:12:49.170416 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.172417 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161025181811')
+D, [2017-01-14T22:12:49.173417 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.173417 #6816]  INFO -- : Migrating to RemoveMesaIdFromUsers (20161025192427)
+D, [2017-01-14T22:12:49.210419 #6816] DEBUG -- :   [1m[35m (30.0ms)[0m  ALTER TABLE `users` DROP `mesa_id`
+D, [2017-01-14T22:12:49.212419 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.214419 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161025192427')
+D, [2017-01-14T22:12:49.215419 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.215419 #6816]  INFO -- : Migrating to AddColumnMesaCodigoToUsers (20161026001059)
+D, [2017-01-14T22:12:49.250421 #6816] DEBUG -- :   [1m[35m (28.0ms)[0m  ALTER TABLE `users` ADD `mesa_codigo` varchar(255)
+D, [2017-01-14T22:12:49.252421 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.253421 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161026001059')
+D, [2017-01-14T22:12:49.254421 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.254421 #6816]  INFO -- : Migrating to AddColumnMesaIdToUser (20161028201638)
+D, [2017-01-14T22:12:49.287423 #6816] DEBUG -- :   [1m[35m (27.0ms)[0m  ALTER TABLE `users` ADD `MesaId` int(11)
+D, [2017-01-14T22:12:49.288423 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.290423 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161028201638')
+D, [2017-01-14T22:12:49.291423 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.291423 #6816]  INFO -- : Migrating to AddColumCpfNomeCepCidadeLogradouroBairroNumeroComplementoTelfixoTelcelular (20161028213719)
+D, [2017-01-14T22:12:49.325425 #6816] DEBUG -- :   [1m[35m (27.0ms)[0m  ALTER TABLE `users` ADD `num_acompanhante` int(11)
+D, [2017-01-14T22:12:49.353427 #6816] DEBUG -- :   [1m[36m (27.0ms)[0m  [1mALTER TABLE `users` ADD `cpf` varchar(255)[0m
+D, [2017-01-14T22:12:49.380428 #6816] DEBUG -- :   [1m[35m (26.0ms)[0m  ALTER TABLE `users` ADD `nome` varchar(255)
+D, [2017-01-14T22:12:49.408430 #6816] DEBUG -- :   [1m[36m (27.0ms)[0m  [1mALTER TABLE `users` ADD `cep` int(11)[0m
+D, [2017-01-14T22:12:49.435432 #6816] DEBUG -- :   [1m[35m (27.0ms)[0m  ALTER TABLE `users` ADD `cidade` varchar(255)
+D, [2017-01-14T22:12:49.463433 #6816] DEBUG -- :   [1m[36m (27.0ms)[0m  [1mALTER TABLE `users` ADD `logradouro` varchar(255)[0m
+D, [2017-01-14T22:12:49.493435 #6816] DEBUG -- :   [1m[35m (28.0ms)[0m  ALTER TABLE `users` ADD `bairro` varchar(255)
+D, [2017-01-14T22:12:49.563439 #6816] DEBUG -- :   [1m[36m (69.0ms)[0m  [1mALTER TABLE `users` ADD `numero` int(11)[0m
+D, [2017-01-14T22:12:49.606441 #6816] DEBUG -- :   [1m[35m (42.0ms)[0m  ALTER TABLE `users` ADD `complemento` varchar(255)
+D, [2017-01-14T22:12:49.640443 #6816] DEBUG -- :   [1m[36m (33.0ms)[0m  [1mALTER TABLE `users` ADD `tel_fixo` varchar(255)[0m
+D, [2017-01-14T22:12:49.673445 #6816] DEBUG -- :   [1m[35m (32.0ms)[0m  ALTER TABLE `users` ADD `tel_celular` varchar(255)
+D, [2017-01-14T22:12:49.675445 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.677445 #6816] DEBUG -- :   [1m[35mSQL (2.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161028213719')
+D, [2017-01-14T22:12:49.678445 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.678445 #6816]  INFO -- : Migrating to CreateEstabelecimentos (20161029070626)
+D, [2017-01-14T22:12:49.700447 #6816] DEBUG -- :   [1m[35m (15.0ms)[0m  CREATE TABLE `estabelecimentos` (`id` int(11) auto_increment PRIMARY KEY, `CNPJ` varchar(255), `InscEstadual` int(11), `RazaoSocial` varchar(255), `NomeFantasia` varchar(255), `CEP` varchar(255), `cIdade` varchar(255), `UF` varchar(255), `CodigoMunicipalIbge` varchar(255), `Logradouro` varchar(255), `Bairro` varchar(255), `Numero` int(11), `Complemento` varchar(255), `TelefoneFixo` varchar(255), `Celular` varchar(255), `Email` varchar(255), `Observacao` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2017-01-14T22:12:49.701447 #6816] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:12:49.703447 #6816] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20161029070626')
+D, [2017-01-14T22:12:49.704447 #6816] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:12:49.704447 #6816]  INFO -- : Migrating to AddColumnCheckinRealizadoToMesa (20161103130544)
+D, [2017-01-14T22:12:49.740449 #6816] DEBUG -- :   [1m[35m (30.0ms)[0m  ALTER TABLE `mesas` ADD `checkin` tinyint(1)
+D, [2017-01-14T22:12:49.768451 #6816] DEBUG -- :   [1m[36m (27.0ms)[0m  [1mALTER TABLE `mesas` ADD `realizado_at` datetime[0m
+D, [2017-01-14T22:12:49.770451 #6816] DEBUG -- :   [1m[35m (0.0ms)[0m  BEGIN
+D, [2017-01-14T22:12:49.771451 #6816] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20161103130544')[0m
+D, [2017-01-14T22:12:49.772451 #6816] DEBUG -- :   [1m[35m (1.0ms)[0m  COMMIT
+I, [2017-01-14T22:12:49.772451 #6816]  INFO -- : Migrating to DropMesaTable (20161103174251)
+D, [2017-01-14T22:12:49.785452 #6816] DEBUG -- :   [1m[36m (7.0ms)[0m  [1mDROP TABLE `mesas`[0m
+D, [2017-01-14T22:12:49.787452 #6816] DEBUG -- :   [1m[35m (1.0ms)[0m  BEGIN
+D, [2017-01-14T22:12:49.788452 #6816] DEBUG -- :   [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20161103174251')[0m
+D, [2017-01-14T22:12:49.790452 #6816] DEBUG -- :   [1m[35m (1.0ms)[0m  COMMIT
+I, [2017-01-14T22:12:49.790452 #6816]  INFO -- : Migrating to CreateMesaWithCheckinTable (20161103174720)
+D, [2017-01-14T22:12:49.811453 #6816] DEBUG -- :   [1m[36m (14.0ms)[0m  [1mCREATE TABLE `mesas` (`id` int(11) auto_increment PRIMARY KEY, `cadeiras` int(11), `codigo` varchar(255), `reservada` tinyint(1), `checkin` tinyint(1), `realizado_at` datetime, `observacao` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2017-01-14T22:12:49.813453 #6816] DEBUG -- :   [1m[35m (0.0ms)[0m  BEGIN
+D, [2017-01-14T22:12:49.815453 #6816] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20161103174720')[0m
+D, [2017-01-14T22:12:49.816453 #6816] DEBUG -- :   [1m[35m (0.0ms)[0m  COMMIT
+I, [2017-01-14T22:12:49.816453 #6816]  INFO -- : Migrating to AlterDefaultCadeirasToMesaAgain (20161103175625)
+D, [2017-01-14T22:12:49.836454 #6816] DEBUG -- :   [1m[36m (8.0ms)[0m  [1mALTER TABLE `mesas` CHANGE `cadeiras` `cadeiras` int(11) DEFAULT 1[0m
+D, [2017-01-14T22:12:49.838455 #6816] DEBUG -- :   [1m[35m (1.0ms)[0m  BEGIN
+D, [2017-01-14T22:12:49.839455 #6816] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20161103175625')[0m
+D, [2017-01-14T22:12:49.840455 #6816] DEBUG -- :   [1m[35m (0.0ms)[0m  COMMIT
+I, [2017-01-14T22:12:49.841455 #6816]  INFO -- : Migrating to AddColumnCheckinToUser (20161110000621)
+D, [2017-01-14T22:12:49.879457 #6816] DEBUG -- :   [1m[36m (31.0ms)[0m  [1mALTER TABLE `users` ADD `checkin` tinyint(1)[0m
+D, [2017-01-14T22:12:49.881457 #6816] DEBUG -- :   [1m[35m (0.0ms)[0m  BEGIN
+D, [2017-01-14T22:12:49.882457 #6816] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20161110000621')[0m
+D, [2017-01-14T22:12:49.883457 #6816] DEBUG -- :   [1m[35m (1.0ms)[0m  COMMIT
+I, [2017-01-14T22:13:20.043182 #7028]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
+I, [2017-01-14T22:14:49.803316 #2308]  INFO -- : BreadcrumbsOnRails detected it won't be overridden. To use methods from this gem you need to call them using bootstrap prefix i.e. add_bootstrap_breadcrumb and render_bootstrap_breadcrumbs.
+I, [2017-01-14T22:15:14.225713 #2308]  INFO -- : Started GET "/" for ::1 at 2017-01-14 22:15:14 -0200
+I, [2017-01-14T22:15:14.288717 #2308]  INFO -- : Processing by ProdutosController#index as HTML
+I, [2017-01-14T22:15:14.310718 #2308]  INFO -- : Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms)
+I, [2017-01-14T22:15:14.679739 #2308]  INFO -- : Started GET "/users/sign_in" for ::1 at 2017-01-14 22:15:14 -0200
+I, [2017-01-14T22:15:14.683739 #2308]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2017-01-14T22:15:16.213827 #2308]  INFO -- :   Rendered devise/shared/_links.erb (24.0ms)
+I, [2017-01-14T22:15:16.214827 #2308]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (149.0ms)
+I, [2017-01-14T22:15:16.223827 #2308]  INFO -- : Completed 200 OK in 1540ms (Views: 1485.4ms | ActiveRecord: 6.0ms)
+I, [2017-01-14T22:15:17.844920 #2308]  INFO -- : Started GET "/favicon.ico" for ::1 at 2017-01-14 22:15:17 -0200
+F, [2017-01-14T22:15:17.847920 #2308] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2017-01-14T22:15:22.788203 #2308]  INFO -- : Started POST "/users/sign_in" for ::1 at 2017-01-14 22:15:22 -0200
+I, [2017-01-14T22:15:22.790203 #2308]  INFO -- : Processing by Devise::SessionsController#create as HTML
+I, [2017-01-14T22:15:22.791203 #2308]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"QjmfWBr7/jh1ACPLssbd1hcLVCqdG4XD8ioi4wJaIq0rvdn+lhsMCVznnYaKzxhHZvXBYH+mU1jA0z2uildDAA==", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+D, [2017-01-14T22:15:22.804204 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'teste@teste.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:15:22.805204 #2308]  INFO -- : Completed 401 Unauthorized in 14ms (ActiveRecord: 1.0ms)
+I, [2017-01-14T22:15:22.807204 #2308]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2017-01-14T22:15:22.808204 #2308]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"QjmfWBr7/jh1ACPLssbd1hcLVCqdG4XD8ioi4wJaIq0rvdn+lhsMCVznnYaKzxhHZvXBYH+mU1jA0z2uildDAA==", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+I, [2017-01-14T22:15:23.076219 #2308]  INFO -- :   Rendered devise/shared/_links.erb (14.0ms)
+I, [2017-01-14T22:15:23.077219 #2308]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (21.0ms)
+I, [2017-01-14T22:15:23.079219 #2308]  INFO -- : Completed 200 OK in 271ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+I, [2017-01-14T22:15:32.061733 #2308]  INFO -- : Started GET "/videos/11390795.mp4" for ::1 at 2017-01-14 22:15:32 -0200
+F, [2017-01-14T22:15:32.064733 #2308] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/videos/11390795.mp4"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2017-01-14T22:15:41.267260 #2308]  INFO -- : Started GET "/videos/11390795.mp4" for ::1 at 2017-01-14 22:15:41 -0200
+F, [2017-01-14T22:15:41.288261 #2308] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/videos/11390795.mp4"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  C:/Ruby22-x64/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2017-01-14T22:16:10.057270 #2308]  INFO -- : Started POST "/users/sign_in" for ::1 at 2017-01-14 22:16:10 -0200
+I, [2017-01-14T22:16:10.057270 #2308]  INFO -- : Processing by Devise::SessionsController#create as HTML
+I, [2017-01-14T22:16:10.057270 #2308]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"FomoZ9hmcY8kdYSAu6ITk+Z30MoZfbExsPz2PpcGlvx/De7BVIaDvg2SOs2Dq9YCl4lFgPvAZ6qCBelzHwv3UQ==", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+D, [2017-01-14T22:16:10.074270 #2308] DEBUG -- :   [1m[35mUser Load (5.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'teste@teste.com'  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2017-01-14T22:16:10.261281 #2308]  INFO -- : Completed 401 Unauthorized in 204ms (ActiveRecord: 5.0ms)
+I, [2017-01-14T22:16:10.263281 #2308]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2017-01-14T22:16:10.263281 #2308]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"FomoZ9hmcY8kdYSAu6ITk+Z30MoZfbExsPz2PpcGlvx/De7BVIaDvg2SOs2Dq9YCl4lFgPvAZ6qCBelzHwv3UQ==", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+I, [2017-01-14T22:16:10.451292 #2308]  INFO -- :   Rendered devise/shared/_links.erb (9.0ms)
+I, [2017-01-14T22:16:10.452292 #2308]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (15.0ms)
+I, [2017-01-14T22:16:10.454292 #2308]  INFO -- : Completed 200 OK in 191ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+I, [2017-01-14T22:16:14.357515 #2308]  INFO -- : Started GET "/users/sign_up" for ::1 at 2017-01-14 22:16:14 -0200
+I, [2017-01-14T22:16:14.363516 #2308]  INFO -- : Processing by Devise::RegistrationsController#new as HTML
+I, [2017-01-14T22:16:15.249566 #2308]  INFO -- :   Rendered devise/shared/_links.erb (34.0ms)
+I, [2017-01-14T22:16:15.250566 #2308]  INFO -- :   Rendered devise/registrations/new.html.erb within layouts/application (52.0ms)
+I, [2017-01-14T22:16:15.254567 #2308]  INFO -- : Completed 200 OK in 891ms (Views: 887.1ms | ActiveRecord: 0.0ms)
+I, [2017-01-14T22:16:20.906702 #2308]  INFO -- : Started POST "/users" for ::1 at 2017-01-14 22:16:20 -0200
+I, [2017-01-14T22:16:20.908702 #2308]  INFO -- : Processing by Devise::RegistrationsController#create as HTML
+I, [2017-01-14T22:16:20.908702 #2308]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"yhCn/8dAo9Jkowba8Eq/gJKykj3oEd3v66vqlWXDjhijlOFZS6BR401EuJfIQ3oR40wHdwqsC3TZUvXY7c7vtQ==", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Inscrever-se"}
+D, [2017-01-14T22:16:21.089712 #2308] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:16:21.116714 #2308] DEBUG -- :   [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@teste.com' LIMIT 1
+D, [2017-01-14T22:16:21.118714 #2308] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+I, [2017-01-14T22:16:22.839812 #2308]  INFO -- :   Rendered devise/shared/_links.erb (9.0ms)
+I, [2017-01-14T22:16:22.839812 #2308]  INFO -- :   Rendered devise/registrations/new.html.erb within layouts/application (15.0ms)
+I, [2017-01-14T22:16:22.842813 #2308]  INFO -- : Completed 200 OK in 1933ms (Views: 18.2ms | ActiveRecord: 2.0ms)
+I, [2017-01-14T22:16:32.188347 #2308]  INFO -- : Started GET "/" for ::1 at 2017-01-14 22:16:32 -0200
+I, [2017-01-14T22:16:32.194347 #2308]  INFO -- : Processing by ProdutosController#index as HTML
+I, [2017-01-14T22:16:32.197348 #2308]  INFO -- : Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+I, [2017-01-14T22:16:32.227349 #2308]  INFO -- : Started GET "/users/sign_in" for ::1 at 2017-01-14 22:16:32 -0200
+I, [2017-01-14T22:16:32.230349 #2308]  INFO -- : Processing by Devise::SessionsController#new as HTML
+I, [2017-01-14T22:16:32.252351 #2308]  INFO -- :   Rendered devise/shared/_links.erb (12.0ms)
+I, [2017-01-14T22:16:32.253351 #2308]  INFO -- :   Rendered devise/sessions/new.html.erb within layouts/application (19.0ms)
+I, [2017-01-14T22:16:32.255351 #2308]  INFO -- : Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+I, [2017-01-14T22:16:39.178747 #2308]  INFO -- : Started POST "/users/sign_in" for ::1 at 2017-01-14 22:16:39 -0200
+I, [2017-01-14T22:16:39.180747 #2308]  INFO -- : Processing by Devise::SessionsController#create as HTML
+I, [2017-01-14T22:16:39.180747 #2308]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"TMA/qRvxo50RCOtSxkPnej/qfHs6mJbJFm6D1e8bkRglRHkPlxFRrDjvVR/+SiLrThTpMdglQFIkl5yYZxbwtQ==", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+D, [2017-01-14T22:16:39.185747 #2308] DEBUG -- :   [1m[35mUser Load (2.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'teste@teste.com'  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:16:39.375758 #2308] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+D, [2017-01-14T22:16:39.379758 #2308] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2017-01-10 14:06:18', `current_sign_in_at` = '2017-01-15 00:16:39', `sign_in_count` = 62, `updated_at` = '2017-01-15 00:16:39' WHERE `users`.`id` = 1
+D, [2017-01-14T22:16:39.392759 #2308] DEBUG -- :   [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:16:39.988793 #2308]  INFO -- : Redirected to http://localhost:3000/
+I, [2017-01-14T22:16:39.988793 #2308]  INFO -- : Completed 302 Found in 808ms (ActiveRecord: 15.0ms)
+I, [2017-01-14T22:16:40.004794 #2308]  INFO -- : Started GET "/" for ::1 at 2017-01-14 22:16:40 -0200
+I, [2017-01-14T22:16:40.005794 #2308]  INFO -- : Processing by ProdutosController#index as HTML
+D, [2017-01-14T22:16:40.007794 #2308] DEBUG -- :   [1m[35mUser Load (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:16:40.735836 #2308] DEBUG -- :   [1m[36mProduto Load (13.0ms)[0m  [1mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`publicado` = 1 AND (id LIKE '%%' or nome LIKE '%%' or descricao LIKE '%%')  ORDER BY updated_at DESC LIMIT 6 OFFSET 0[0m
+D, [2017-01-14T22:16:40.754837 #2308] DEBUG -- :   [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `produtos` WHERE `produtos`.`publicado` = 1 AND (id LIKE '%%' or nome LIKE '%%' or descricao LIKE '%%')
+I, [2017-01-14T22:16:40.764838 #2308]  INFO -- :   Rendered produtos/index.html.erb within layouts/application (45.0ms)
+D, [2017-01-14T22:16:40.767838 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:16:40.770838 #2308]  INFO -- : Completed 200 OK in 765ms (Views: 726.7ms | ActiveRecord: 32.0ms)
+I, [2017-01-14T22:16:47.121201 #2308]  INFO -- : Started GET "/mesas" for ::1 at 2017-01-14 22:16:47 -0200
+I, [2017-01-14T22:16:47.125201 #2308]  INFO -- : Processing by MesasController#index as HTML
+D, [2017-01-14T22:16:47.141202 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:16:47.922247 #2308] DEBUG -- :   [1m[36mMesa Load (1.0ms)[0m  [1mSELECT  `mesas`.* FROM `mesas` WHERE `mesas`.`reservada` = 0 AND (id LIKE '%%' or codigo LIKE '%%' or observacao LIKE '%%')  ORDER BY id, created_at DESC LIMIT 4 OFFSET 0[0m
+D, [2017-01-14T22:16:47.934248 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `mesas` WHERE `mesas`.`reservada` = 0 AND (id LIKE '%%' or codigo LIKE '%%' or observacao LIKE '%%')
+D, [2017-01-14T22:16:47.935248 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:16:47.937248 #2308] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:16:47.938248 #2308] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:16:47.939248 #2308] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2017-01-14T22:16:47.941248 #2308]  INFO -- :   Rendered mesas/index.html.erb within layouts/application (25.0ms)
+D, [2017-01-14T22:16:47.943248 #2308] DEBUG -- :   [1m[36mCACHE (1.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:16:47.944248 #2308]  INFO -- : Completed 200 OK in 810ms (Views: 788.0ms | ActiveRecord: 13.0ms)
+I, [2017-01-14T22:17:02.224065 #2308]  INFO -- : Started GET "/mesas/2/edit" for ::1 at 2017-01-14 22:17:02 -0200
+I, [2017-01-14T22:17:02.226065 #2308]  INFO -- : Processing by MesasController#edit as HTML
+I, [2017-01-14T22:17:02.226065 #2308]  INFO -- :   Parameters: {"id"=>"2"}
+D, [2017-01-14T22:17:02.229065 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:02.243066 #2308] DEBUG -- :   [1m[36mMesa Load (1.0ms)[0m  [1mSELECT  `mesas`.* FROM `mesas` WHERE `mesas`.`id` = 2 LIMIT 1[0m
+D, [2017-01-14T22:17:02.243066 #2308] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `mesas`.* FROM `mesas` WHERE `mesas`.`id` = 2 LIMIT 1  [["id", "2"]]
+D, [2017-01-14T22:17:02.325071 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:17:02.420076 #2308] DEBUG -- :   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2017-01-14T22:17:02.425076 #2308]  INFO -- :   Rendered mesas/_form.html.erb (10.0ms)
+I, [2017-01-14T22:17:02.425076 #2308]  INFO -- :   Rendered mesas/edit.html.erb within layouts/application (102.0ms)
+D, [2017-01-14T22:17:02.427077 #2308] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:17:02.429077 #2308]  INFO -- : Completed 200 OK in 202ms (Views: 183.7ms | ActiveRecord: 3.0ms)
+I, [2017-01-14T22:17:04.708207 #2308]  INFO -- : Started PATCH "/mesas/2" for ::1 at 2017-01-14 22:17:04 -0200
+I, [2017-01-14T22:17:04.710207 #2308]  INFO -- : Processing by MesasController#update as HTML
+I, [2017-01-14T22:17:04.711207 #2308]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"NEvqV8xitvbjN0nsqmvmJGdSePLYt9eq4+r4szUASyRe4GlkRqdiSPcR75CnKBUa1D/lBenp2oztFjCp/tc3iQ==", "mesa"=>{"reservada"=>"1"}, "commit"=>"Realizar reserva", "id"=>"2"}
+D, [2017-01-14T22:17:04.713207 #2308] DEBUG -- :   [1m[35mUser Load (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:04.715207 #2308] DEBUG -- :   [1m[36mMesa Load (1.0ms)[0m  [1mSELECT  `mesas`.* FROM `mesas` WHERE `mesas`.`id` = 2 LIMIT 1[0m
+D, [2017-01-14T22:17:04.716208 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  BEGIN
+D, [2017-01-14T22:17:04.721208 #2308] DEBUG -- :   [1m[36mMesa Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM `mesas` WHERE (`mesas`.`codigo` = 'MESA0002' AND `mesas`.`id` != 2) LIMIT 1[0m
+D, [2017-01-14T22:17:04.726208 #2308] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  UPDATE `mesas` SET `reservada` = 1, `updated_at` = '2017-01-15 00:17:04' WHERE `mesas`.`id` = 2
+D, [2017-01-14T22:17:04.739209 #2308] DEBUG -- :   [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+I, [2017-01-14T22:17:04.741209 #2308]  INFO -- : Redirected to http://localhost:3000/mesas/2
+D, [2017-01-14T22:17:04.742209 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:04.743209 #2308] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:17:04.743209 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  BEGIN
+D, [2017-01-14T22:17:04.746209 #2308] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mUPDATE `users` SET `mesa_codigo` = 'MESA0002', `MesaId` = 2, `updated_at` = '2017-01-15 00:17:04' WHERE `users`.`id` = 1[0m
+D, [2017-01-14T22:17:04.748209 #2308] DEBUG -- :   [1m[35m (1.0ms)[0m  COMMIT
+I, [2017-01-14T22:17:04.748209 #2308]  INFO -- : Completed 302 Found in 37ms (ActiveRecord: 17.0ms)
+I, [2017-01-14T22:17:04.763210 #2308]  INFO -- : Started GET "/mesas/2" for ::1 at 2017-01-14 22:17:04 -0200
+I, [2017-01-14T22:17:04.765210 #2308]  INFO -- : Processing by MesasController#show as HTML
+I, [2017-01-14T22:17:04.765210 #2308]  INFO -- :   Parameters: {"id"=>"2"}
+D, [2017-01-14T22:17:04.767210 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:17:04.768211 #2308] DEBUG -- :   [1m[35mMesa Load (0.0ms)[0m  SELECT  `mesas`.* FROM `mesas` WHERE `mesas`.`id` = 2 LIMIT 1
+D, [2017-01-14T22:17:04.769211 #2308] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `mesas`.* FROM `mesas` WHERE `mesas`.`id` = 2 LIMIT 1[0m  [["id", "2"]]
+D, [2017-01-14T22:17:04.848215 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2017-01-14T22:17:04.850215 #2308]  INFO -- :   Rendered mesas/show.html.erb within layouts/application (6.0ms)
+D, [2017-01-14T22:17:04.852215 #2308] DEBUG -- :   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:17:04.854215 #2308]  INFO -- : Completed 200 OK in 89ms (Views: 83.4ms | ActiveRecord: 2.0ms)
+I, [2017-01-14T22:17:10.443535 #2308]  INFO -- : Started GET "/admin" for ::1 at 2017-01-14 22:17:10 -0200
+I, [2017-01-14T22:17:10.454536 #2308]  INFO -- : Processing by RailsAdmin::MainController#dashboard as HTML
+D, [2017-01-14T22:17:10.457536 #2308] DEBUG -- :   [1m[35mUser Load (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:10.801556 #2308] DEBUG -- :   [1m[36m (12.0ms)[0m  [1mSELECT COUNT(*) FROM `estabelecimentos`[0m
+D, [2017-01-14T22:17:10.803556 #2308] DEBUG -- :   [1m[35mEstabelecimento Load (0.0ms)[0m  SELECT  `estabelecimentos`.* FROM `estabelecimentos`  ORDER BY estabelecimentos.updated_at desc LIMIT 1
+D, [2017-01-14T22:17:10.821557 #2308] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `mesas`[0m
+D, [2017-01-14T22:17:10.823557 #2308] DEBUG -- :   [1m[35mMesa Load (0.0ms)[0m  SELECT  `mesas`.* FROM `mesas`  ORDER BY mesas.updated_at desc LIMIT 1
+D, [2017-01-14T22:17:10.824557 #2308] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM `produtos`[0m
+D, [2017-01-14T22:17:10.826557 #2308] DEBUG -- :   [1m[35mProduto Load (1.0ms)[0m  SELECT  `produtos`.* FROM `produtos`  ORDER BY produtos.updated_at desc LIMIT 1
+D, [2017-01-14T22:17:10.833557 #2308] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `registros`[0m
+D, [2017-01-14T22:17:10.835558 #2308] DEBUG -- :   [1m[35mRegistro Load (1.0ms)[0m  SELECT  `registros`.* FROM `registros`  ORDER BY registros.updated_at desc LIMIT 1
+D, [2017-01-14T22:17:10.849558 #2308] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `tipos`[0m
+D, [2017-01-14T22:17:10.851558 #2308] DEBUG -- :   [1m[35mTipo Load (1.0ms)[0m  SELECT  `tipos`.* FROM `tipos`  ORDER BY tipos.updated_at desc LIMIT 1
+D, [2017-01-14T22:17:10.857559 #2308] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+D, [2017-01-14T22:17:10.858559 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY users.updated_at desc LIMIT 1
+I, [2017-01-14T22:17:11.850616 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (42.0ms)
+I, [2017-01-14T22:17:12.831672 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (10.0ms)
+I, [2017-01-14T22:17:12.831672 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (518.0ms)
+I, [2017-01-14T22:17:13.292698 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.0ms)
+I, [2017-01-14T22:17:13.746724 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (6.0ms)
+I, [2017-01-14T22:17:13.747724 #2308]  INFO -- : Completed 200 OK in 3293ms (Views: 2888.0ms | ActiveRecord: 35.0ms)
+I, [2017-01-14T22:17:15.938849 #2308]  INFO -- : Started GET "/admin/registro?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:15 -0200
+I, [2017-01-14T22:17:15.941850 #2308]  INFO -- : Processing by RailsAdmin::MainController#index as HTML
+I, [2017-01-14T22:17:15.941850 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"registro"}
+D, [2017-01-14T22:17:15.945850 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:17:16.542884 #2308] DEBUG -- :   [1m[35mRegistro Load (1.0ms)[0m  SELECT  `registros`.* FROM `registros`  ORDER BY registros.id desc LIMIT 20 OFFSET 0
+D, [2017-01-14T22:17:16.890904 #2308] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM `registros`[0m
+I, [2017-01-14T22:17:17.395933 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (907.1ms)
+I, [2017-01-14T22:17:17.404933 #2308]  INFO -- : Completed 200 OK in 1463ms (Views: 1448.1ms | ActiveRecord: 2.0ms)
+I, [2017-01-14T22:17:18.809014 #2308]  INFO -- : Started GET "/admin/registro/16/edit?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:18 -0200
+I, [2017-01-14T22:17:18.815014 #2308]  INFO -- : Processing by RailsAdmin::MainController#edit as HTML
+I, [2017-01-14T22:17:18.816014 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"registro", "id"=>"16"}
+D, [2017-01-14T22:17:18.819014 #2308] DEBUG -- :   [1m[35mUser Load (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:18.830015 #2308] DEBUG -- :   [1m[36mRegistro Load (1.0ms)[0m  [1mSELECT  `registros`.* FROM `registros` WHERE `registros`.`id` = 16  ORDER BY `registros`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:17:19.750067 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (2.0ms)
+I, [2017-01-14T22:17:20.281098 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (2.0ms)
+I, [2017-01-14T22:17:20.284098 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (1.0ms)
+I, [2017-01-14T22:17:20.726123 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_boolean.html.haml (2.0ms)
+I, [2017-01-14T22:17:21.202150 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (7.0ms)
+I, [2017-01-14T22:17:21.204151 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/pjax (1890.1ms)
+I, [2017-01-14T22:17:21.219151 #2308]  INFO -- : Completed 200 OK in 2403ms (Views: 2385.1ms | ActiveRecord: 1.0ms)
+I, [2017-01-14T22:17:21.223152 #2308]  INFO -- : Started GET "/admin/registro/16/edit" for ::1 at 2017-01-14 22:17:21 -0200
+I, [2017-01-14T22:17:21.225152 #2308]  INFO -- : Processing by RailsAdmin::MainController#edit as HTML
+I, [2017-01-14T22:17:21.225152 #2308]  INFO -- :   Parameters: {"model_name"=>"registro", "id"=>"16"}
+D, [2017-01-14T22:17:21.228152 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:21.236152 #2308] DEBUG -- :   [1m[36mRegistro Load (1.0ms)[0m  [1mSELECT  `registros`.* FROM `registros` WHERE `registros`.`id` = 16  ORDER BY `registros`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:17:21.245153 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+I, [2017-01-14T22:17:21.248153 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (1.0ms)
+I, [2017-01-14T22:17:21.250153 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (1.0ms)
+I, [2017-01-14T22:17:21.253153 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_boolean.html.haml (1.0ms)
+I, [2017-01-14T22:17:21.257154 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (4.0ms)
+I, [2017-01-14T22:17:21.260154 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/application (20.0ms)
+I, [2017-01-14T22:17:21.273155 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (8.0ms)
+I, [2017-01-14T22:17:21.273155 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (10.0ms)
+I, [2017-01-14T22:17:21.283155 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (10.0ms)
+I, [2017-01-14T22:17:21.307156 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (23.0ms)
+I, [2017-01-14T22:17:21.308157 #2308]  INFO -- : Completed 200 OK in 83ms (Views: 69.9ms | ActiveRecord: 2.0ms)
+I, [2017-01-14T22:17:24.028312 #2308]  INFO -- : Started GET "/admin/registro?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:24 -0200
+I, [2017-01-14T22:17:24.030312 #2308]  INFO -- : Processing by RailsAdmin::MainController#index as HTML
+I, [2017-01-14T22:17:24.031312 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"registro"}
+D, [2017-01-14T22:17:24.034312 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:24.077315 #2308] DEBUG -- :   [1m[36mRegistro Load (2.0ms)[0m  [1mSELECT  `registros`.* FROM `registros`  ORDER BY registros.id desc LIMIT 20 OFFSET 0[0m
+D, [2017-01-14T22:17:24.362331 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `registros`
+I, [2017-01-14T22:17:24.364331 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (310.0ms)
+I, [2017-01-14T22:17:24.372332 #2308]  INFO -- : Completed 200 OK in 341ms (Views: 316.7ms | ActiveRecord: 3.0ms)
+I, [2017-01-14T22:17:27.642519 #2308]  INFO -- : Started GET "/admin/registro?model_name=registro&utf8=%E2%9C%93&query=dev&_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:27 -0200
+I, [2017-01-14T22:17:27.644519 #2308]  INFO -- : Processing by RailsAdmin::MainController#index as HTML
+I, [2017-01-14T22:17:27.644519 #2308]  INFO -- :   Parameters: {"model_name"=>"registro", "utf8"=>"✓", "query"=>"dev", "_pjax"=>"[data-pjax-container]"}
+D, [2017-01-14T22:17:27.648519 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:17:27.710523 #2308] DEBUG -- :   [1m[35mRegistro Load (5.0ms)[0m  SELECT  `registros`.* FROM `registros` WHERE ((LOWER(registros.referencia) LIKE '%dev%') OR (LOWER(registros.descricao) LIKE '%dev%') OR (LOWER(registros.observacao) LIKE '%dev%'))  ORDER BY registros.id desc LIMIT 20 OFFSET 0
+D, [2017-01-14T22:17:27.766526 #2308] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `registros` WHERE ((LOWER(registros.referencia) LIKE '%dev%') OR (LOWER(registros.descricao) LIKE '%dev%') OR (LOWER(registros.observacao) LIKE '%dev%'))[0m
+I, [2017-01-14T22:17:27.768526 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (106.0ms)
+I, [2017-01-14T22:17:27.778526 #2308]  INFO -- : Completed 200 OK in 133ms (Views: 111.5ms | ActiveRecord: 7.0ms)
+I, [2017-01-14T22:17:29.604556 #2308]  INFO -- : Started GET "/admin/registro/16/edit?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:29 -0200
+I, [2017-01-14T22:17:29.608556 #2308]  INFO -- : Processing by RailsAdmin::MainController#edit as HTML
+I, [2017-01-14T22:17:29.608556 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"registro", "id"=>"16"}
+D, [2017-01-14T22:17:29.613556 #2308] DEBUG -- :   [1m[35mUser Load (2.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:29.627557 #2308] DEBUG -- :   [1m[36mRegistro Load (1.0ms)[0m  [1mSELECT  `registros`.* FROM `registros` WHERE `registros`.`id` = 16  ORDER BY `registros`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:17:29.643558 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.0ms)
+I, [2017-01-14T22:17:29.647558 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (1.0ms)
+I, [2017-01-14T22:17:29.650558 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_text.html.haml (0.0ms)
+I, [2017-01-14T22:17:29.653559 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_boolean.html.haml (1.0ms)
+I, [2017-01-14T22:17:29.657559 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (4.0ms)
+I, [2017-01-14T22:17:29.660559 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/edit.html.haml within layouts/rails_admin/pjax (27.0ms)
+I, [2017-01-14T22:17:29.685560 #2308]  INFO -- : Completed 200 OK in 77ms (Views: 52.4ms | ActiveRecord: 3.0ms)
+I, [2017-01-14T22:17:31.596592 #2308]  INFO -- : Started GET "/admin/produto?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:31 -0200
+I, [2017-01-14T22:17:31.600592 #2308]  INFO -- : Processing by RailsAdmin::MainController#index as HTML
+I, [2017-01-14T22:17:31.600592 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"produto"}
+D, [2017-01-14T22:17:31.603593 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:31.646595 #2308] DEBUG -- :   [1m[36mProduto Load (0.0ms)[0m  [1mSELECT  `produtos`.* FROM `produtos`  ORDER BY produtos.id desc LIMIT 20 OFFSET 0[0m
+D, [2017-01-14T22:17:31.729597 #2308] DEBUG -- :   [1m[35mTipo Load (1.0ms)[0m  SELECT `tipos`.* FROM `tipos` WHERE `tipos`.`id` IN (3, 4, 2)
+D, [2017-01-14T22:17:31.888599 #2308] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM `produtos`[0m
+I, [2017-01-14T22:17:31.888599 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (260.0ms)
+I, [2017-01-14T22:17:31.898599 #2308]  INFO -- : Completed 200 OK in 297ms (Views: 269.7ms | ActiveRecord: 2.0ms)
+I, [2017-01-14T22:17:32.608625 #2308]  INFO -- : Started GET "/admin/estabelecimento?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:32 -0200
+I, [2017-01-14T22:17:32.611625 #2308]  INFO -- : Processing by RailsAdmin::MainController#index as HTML
+I, [2017-01-14T22:17:32.611625 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"estabelecimento"}
+D, [2017-01-14T22:17:32.614625 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:32.642627 #2308] DEBUG -- :   [1m[36mEstabelecimento Load (0.0ms)[0m  [1mSELECT  `estabelecimentos`.* FROM `estabelecimentos`  ORDER BY estabelecimentos.id desc LIMIT 20 OFFSET 0[0m
+D, [2017-01-14T22:17:32.667627 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `estabelecimentos`
+I, [2017-01-14T22:17:32.677627 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (49.0ms)
+I, [2017-01-14T22:17:32.687627 #2308]  INFO -- : Completed 200 OK in 76ms (Views: 60.9ms | ActiveRecord: 1.0ms)
+I, [2017-01-14T22:17:33.125638 #2308]  INFO -- : Started GET "/admin/mesa?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:33 -0200
+I, [2017-01-14T22:17:33.129639 #2308]  INFO -- : Processing by RailsAdmin::MainController#index as HTML
+I, [2017-01-14T22:17:33.129639 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"mesa"}
+D, [2017-01-14T22:17:33.147640 #2308] DEBUG -- :   [1m[36mUser Load (3.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:17:33.207642 #2308] DEBUG -- :   [1m[35mMesa Load (0.0ms)[0m  SELECT  `mesas`.* FROM `mesas`  ORDER BY mesas.id desc LIMIT 20 OFFSET 0
+D, [2017-01-14T22:17:33.340642 #2308] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM `mesas`[0m
+I, [2017-01-14T22:17:33.340642 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (162.0ms)
+I, [2017-01-14T22:17:33.350642 #2308]  INFO -- : Completed 200 OK in 221ms (Views: 177.7ms | ActiveRecord: 3.0ms)
+I, [2017-01-14T22:17:34.439684 #2308]  INFO -- : Started GET "/admin/estabelecimento?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:34 -0200
+I, [2017-01-14T22:17:34.442685 #2308]  INFO -- : Processing by RailsAdmin::MainController#index as HTML
+I, [2017-01-14T22:17:34.442685 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"estabelecimento"}
+D, [2017-01-14T22:17:34.445685 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:34.484687 #2308] DEBUG -- :   [1m[36mEstabelecimento Load (0.0ms)[0m  [1mSELECT  `estabelecimentos`.* FROM `estabelecimentos`  ORDER BY estabelecimentos.id desc LIMIT 20 OFFSET 0[0m
+D, [2017-01-14T22:17:34.503688 #2308] DEBUG -- :   [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `estabelecimentos`
+I, [2017-01-14T22:17:34.505688 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (46.0ms)
+I, [2017-01-14T22:17:34.517689 #2308]  INFO -- : Completed 200 OK in 75ms (Views: 57.2ms | ActiveRecord: 2.0ms)
+I, [2017-01-14T22:17:35.034707 #2308]  INFO -- : Started GET "/admin/?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2017-01-14 22:17:35 -0200
+I, [2017-01-14T22:17:35.037707 #2308]  INFO -- : Processing by RailsAdmin::MainController#dashboard as HTML
+I, [2017-01-14T22:17:35.038707 #2308]  INFO -- :   Parameters: {"_pjax"=>"[data-pjax-container]"}
+D, [2017-01-14T22:17:35.041707 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+D, [2017-01-14T22:17:35.047707 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `estabelecimentos`
+D, [2017-01-14T22:17:35.049708 #2308] DEBUG -- :   [1m[36mEstabelecimento Load (1.0ms)[0m  [1mSELECT  `estabelecimentos`.* FROM `estabelecimentos`  ORDER BY estabelecimentos.updated_at desc LIMIT 1[0m
+D, [2017-01-14T22:17:35.051708 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `mesas`
+D, [2017-01-14T22:17:35.054708 #2308] DEBUG -- :   [1m[36mMesa Load (0.0ms)[0m  [1mSELECT  `mesas`.* FROM `mesas`  ORDER BY mesas.updated_at desc LIMIT 1[0m
+D, [2017-01-14T22:17:35.056708 #2308] DEBUG -- :   [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `produtos`
+D, [2017-01-14T22:17:35.059708 #2308] DEBUG -- :   [1m[36mProduto Load (1.0ms)[0m  [1mSELECT  `produtos`.* FROM `produtos`  ORDER BY produtos.updated_at desc LIMIT 1[0m
+D, [2017-01-14T22:17:35.062708 #2308] DEBUG -- :   [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `registros`
+D, [2017-01-14T22:17:35.063708 #2308] DEBUG -- :   [1m[36mRegistro Load (0.0ms)[0m  [1mSELECT  `registros`.* FROM `registros`  ORDER BY registros.updated_at desc LIMIT 1[0m
+D, [2017-01-14T22:17:35.065709 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `tipos`
+D, [2017-01-14T22:17:35.067709 #2308] DEBUG -- :   [1m[36mTipo Load (1.0ms)[0m  [1mSELECT  `tipos`.* FROM `tipos`  ORDER BY tipos.updated_at desc LIMIT 1[0m
+D, [2017-01-14T22:17:35.068709 #2308] DEBUG -- :   [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `users`
+D, [2017-01-14T22:17:35.070709 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY users.updated_at desc LIMIT 1[0m
+I, [2017-01-14T22:17:40.961954 #2308]  INFO -- :   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/pjax (59.0ms)
+I, [2017-01-14T22:17:40.968954 #2308]  INFO -- : Completed 200 OK in 5930ms (Views: 5897.0ms | ActiveRecord: 7.0ms)
+I, [2017-01-14T22:17:40.973954 #2308]  INFO -- : Started GET "/users/edit" for ::1 at 2017-01-14 22:17:40 -0200
+I, [2017-01-14T22:17:40.975955 #2308]  INFO -- : Processing by Devise::RegistrationsController#edit as HTML
+D, [2017-01-14T22:17:40.978955 #2308] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+I, [2017-01-14T22:17:41.085961 #2308]  INFO -- :   Rendered devise/registrations/edit.html.erb within layouts/application (21.0ms)
+D, [2017-01-14T22:17:41.088961 #2308] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:17:41.090961 #2308]  INFO -- : Completed 200 OK in 115ms (Views: 109.5ms | ActiveRecord: 2.0ms)
+I, [2017-01-14T22:17:48.985074 #2308]  INFO -- : Started GET "/" for ::1 at 2017-01-14 22:17:48 -0200
+I, [2017-01-14T22:17:48.988075 #2308]  INFO -- : Processing by ProdutosController#index as HTML
+D, [2017-01-14T22:17:48.995075 #2308] DEBUG -- :   [1m[35mUser Load (2.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+D, [2017-01-14T22:17:49.000075 #2308] DEBUG -- :   [1m[36mProduto Load (0.0ms)[0m  [1mSELECT  `produtos`.* FROM `produtos` WHERE `produtos`.`publicado` = 1 AND (id LIKE '%%' or nome LIKE '%%' or descricao LIKE '%%')  ORDER BY updated_at DESC LIMIT 6 OFFSET 0[0m
+D, [2017-01-14T22:17:49.003076 #2308] DEBUG -- :   [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `produtos` WHERE `produtos`.`publicado` = 1 AND (id LIKE '%%' or nome LIKE '%%' or descricao LIKE '%%')
+I, [2017-01-14T22:17:49.019076 #2308]  INFO -- :   Rendered produtos/index.html.erb within layouts/application (20.0ms)
+D, [2017-01-14T22:17:49.021077 #2308] DEBUG -- :   [1m[36mUser Load (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+I, [2017-01-14T22:17:49.024077 #2308]  INFO -- : Completed 200 OK in 34ms (Views: 25.2ms | ActiveRecord: 3.0ms)

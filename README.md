@@ -82,10 +82,12 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 
 ### Ambiente de Desenvolvimento
 
-- Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto;
-- Executar o comando: ```rails s``` e aguardar até o servidor ser iniciado por completo;
-- Abra o navegador e acesse o endereço [http://localhost:3000/](http://localhost:3000/);
-- Pronto! O sistema ```Qro Check-in de Mesa``` será carregado.
+1. Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto;
+2. Executar o comando: ```rails s``` e aguardar até o servidor ser iniciado por completo;
+3. Abra o navegador e acesse o endereço [http://localhost:3000/](http://localhost:3000/);
+4. Pronto! O sistema ```Qro Check-in de Mesa``` será carregado.
+
+> Por padrão, o sistema é executado no ambiente de desenvolvimento.
 
 ### Ambiente de Teste
 
@@ -93,7 +95,15 @@ Para isso, clique [aqui](https://raw.githubusercontent.com/marquescharlon/check-
 2. Executar o comando ```bundle exec rake db:migrate RAILS_ENV=test```;
 3. Ao invés de digitar ```rails s```, digite: ```rails s -e test```.
 
-> Caso não tenha em seu banco de dados o database ```qro_test```, então, execute o seguinte comando ```bundle exec rake db:create db:migrate RAILS=test```.
+> Caso não tenha em seu banco de dados o database ```qro_test```, então, execute o seguinte comando: ```bundle exec rake db:create db:migrate RAILS=test```.
+
+### Ambiente de Produção/Cliente
+
+1. Abrir o Prompt(Modo Administrador) e acessar o diretório do projeto;
+2. Executar o comando ```bundle exec rake db:migrate RAILS_ENV=production```;
+3. Ao invés de digitar ```rails s```, digite: ```rails s -e production```.
+
+> Caso não tenha em seu banco de dados o database ```qro_production```, então, execute o seguinte comando: ```bundle exec rake db:create db:migrate RAILS=production```.
 
 # Erros, dificuldades e soluções
 
@@ -545,6 +555,52 @@ before_action :authenticate_user!
 <br>Mesmo após ter feito a instalação da forma correta, o sistema não estava querendo enviar o anexo, foi necessário instalar o [node-v4.4.5-x86](https://raw.githubusercontent.com/marquescharlon/check-in_ruby_tcc/master/public/apps/node-v4.4.5-x86.msi), após a instalação o meu funcionou. Talvez fosse por falta de alguma biblioteca. 
 
 > No meu caso, a instalação do ```node-v4.4.5-x86``` foi feita ainda no início do projeto, pois, o botão ```Delete``` não estava funcionando.
+
+### 16. Erro ao tentar executar o sistema no ambiente de produção
+
+```tex
+C:\Users\MRSANTOS\Dropbox\UNICA\TCC\qro>bundle exec rake db:create db:migrate RAILS_ENV=production
+rake aborted!
+Devise.secret_key was not set. Please add the following to your Devise initializer:
+
+  config.secret_key = '07f7e1f26f0a607792cb8c1a4889e75f697872937121cb3c48a704004
+904bd51c18daba3cde980e92244091524c7c12f82c4381e5953a763340ae4eec8665b43'
+
+Please ensure you restarted your application after installing Devise or settingthe key.
+C:/Users/MRSANTOS/Dropbox/UNICA/TCC/qro/config/routes.rb:3:in `block in <top (required)>'
+C:/Users/MRSANTOS/Dropbox/UNICA/TCC/qro/config/routes.rb:1:in `<top (required)>'
+
+C:in `execute_if_updated'
+C:/Users/MRSANTOS/Dropbox/UNICA/TCC/qro/config/environment.rb:5:in `<top (required)>'
+Tasks: TOP => db:migrate => environment
+(See full trace by running task with --trace)
+```
+
+- Foi necessário adicionar o código abaixo no arquivo ```config/initializers/devise.rb```:
+
+```tex
+config.secret_key = '07f7e1f26f0a607792cb8c1a4889e75f697872937121cb3c48a704004904bd51c18daba3cde980e92244091524c7c12f82c4381e5953a763340ae4eec8665b43'
+```
+
+- Também, foi necessário adicionar essa sequencia de números no arquivo ```config/secrets.yml```, no lugar de ```<%= ENV["SECRET_KEY_BASE"] %>``` de ```producion:```. Por exemplo:
+
+```tex
+development:
+  secret_key_base: 2b49b4ba790055406a1953ed3191fbc064dbfd6119cdad45ea0170748d8d402073a09427c2f9449db4f4d68362e80e86c0d85b3aa8b1cfb49c11d13be5144245
+
+test:
+  secret_key_base: e5ecc5245627d0e2290f94471c391cef6023b6871badd252e17995d3306493ff0457543461a861fd6dd88df3f7db936c8d9ad2f7460da2953da813b8d26d9a76
+
+# Do not keep production secrets in the repository,
+# instead read values from the environment.
+production:
+  secret_key_base: '07f7e1f26f0a607792cb8c1a4889e75f697872937121cb3c48a704004904bd51c18daba3cde980e92244091524c7c12f82c4381e5953a763340ae4eec8665b43'
+```
+
+- Após adicionar o token, executar o seguinte comando: ```bundle exec rake db:create db:migrate RAILS_ENV=production```;
+- Por último, só executar o sistema com o comando ```rails s -e production```.
+
+> Se der erro lhe informando um novo token, então, substitua-o pelo que está sendo informado pelo devise no prompt. Tem como trabalhar com o **token** de outras formas, porém, essa é uma solução temporária.
 
 # CONCLUSÃO
 
